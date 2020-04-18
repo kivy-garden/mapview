@@ -18,10 +18,10 @@ from kivy.graphics.transformation import Matrix
 from kivy.lang import Builder
 from kivy.compat import string_types
 from math import ceil
-from mapview import MIN_LONGITUDE, MAX_LONGITUDE, MIN_LATITUDE, MAX_LATITUDE, \
+from kivy_garden.mapview import MIN_LONGITUDE, MAX_LONGITUDE, MIN_LATITUDE, MAX_LATITUDE, \
     CACHE_DIR, Coordinate, Bbox
-from mapview.source import MapSource
-from mapview.utils import clamp
+from kivy_garden.mapview.source import MapSource
+from kivy_garden.mapview.utils import clamp
 from itertools import takewhile
 
 import webbrowser
