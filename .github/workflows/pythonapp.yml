@@ -1,0 +1,135 @@
+name: Garden flower
+on: [push, pull_request]
+
+jobs:
+  lint_test:
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up Python 3.x
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.x
+    - name: Install dependencies
+      run: |
+        python3 -m pip install --upgrade pip virtualenv wheel setuptools
+    - name: Lint with pycodestyle
+      run: |
+        python3 -m pip install flake8
+        python3 -m flake8 . --count --ignore=E125,E126,E127,E128,E402,E741,E731,W503,F401,W504,F841 --show-source --statistics --max-line-length=80 --exclude=__pycache__,.tox,.git/,doc/
+
+  linux_test:
+    runs-on: ubuntu-18.04
+    env:
+      DISPLAY: :99.0
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up Python 3.x
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.x
+    - name: Make sdist
+      run: python3 setup.py sdist --formats=gztar
+    - name: Install dependencies
+      run: |
+        sudo apt update
+        sudo apt -y install libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libsdl2-mixer-dev
+        sudo apt-get -y install python3-setuptools build-essential libgl1-mesa-dev libgles2-mesa-dev
+        /sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -screen 0 1280x720x24 -ac +extension GLX
+
+        python3 -m pip install --upgrade pip virtualenv wheel setuptools
+        python3 -m pip install kivy[base] --pre --extra-index-url https://kivy.org/downloads/simple/
+    - name: Install flower
+      run: python3 -m pip install -e .[dev,ci] --extra-index-url https://kivy-garden.github.io/simple/
+    - name: Make wheel
+      run: python3 setup.py bdist_wheel --universal
+    - name: Upload wheels as artifact
+      uses: actions/upload-artifact@master
+      with:
+        name: wheels
+        path: dist
+    - name: Upload to GitHub Release
+      uses: softprops/action-gh-release@78c309ef59fdb9557cd6574f2e0be552936ed728
+      if: startsWith(github.ref, 'refs/tags/')
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        files: dist/*
+        draft: true
+    - name: Test with pytest
+      run: |
+        flower_name=$(python3 -c "print('$GITHUB_REPOSITORY'.split('/')[-1])")
+        python3 -m pytest --cov=kivy_garden.$flower_name --cov-report term --cov-branch
+
+  windows_test:
+    runs-on: windows-latest
+    env:
+      KIVY_GL_BACKEND: angle_sdl2
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up Python 3.x
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.x
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip virtualenv wheel setuptools
+        python -m pip install kivy[base] --pre --extra-index-url  https://kivy.org/downloads/simple/
+    - name: Install flower
+      run: python -m pip install -e .[dev,ci] --extra-index-url https://kivy-garden.github.io/simple/
+    - name: Test with pytest
+      run: |
+        $flower_name=(python -c "print('$GITHUB_REPOSITORY'.split('/')[-1])")
+        python -m pytest --cov=kivy_garden.$flower_name --cov-report term --cov-branch
+
+  docs:
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up Python 3.x
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.x
+    - name: Install dependencies
+      env:
+          KIVY_DOC_INCLUDE: 1
+          KIVY_DOC: 1
+      run: |
+        python3 -m pip install --upgrade pip virtualenv wheel setuptools sphinx
+        python3 -m pip install kivy[base] --pre --extra-index-url https://kivy.org/downloads/simple/
+        python3 -m pip install -e .[dev,ci] --extra-index-url https://kivy-garden.github.io/simple/
+    - name: Generate docs
+      run: |
+        cd doc
+        make html
+    - name: Upload docs as artifact
+      uses: actions/upload-artifact@master
+      with:
+        name: docs
+        path: doc/build/html
+    - name: gh-pages upload
+      if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        flower_name=$(python3 -c "print('$GITHUB_REPOSITORY'.split('/')[-1])")
+        cp -r doc/build/html ~/docs_temp
+
+        git config --global user.email "kivy@kivy.org"
+        git config --global user.name "Kivy Developers"
+        git remote rm origin || true
+        git remote add origin "https://x-access-token:${GITHUB_TOKEN}@github.com/$GITHUB_REPOSITORY.git"
+
+        git checkout --orphan gh-pages
+        cp -r .git ~/docs_git
+        cd ..
+        rm -rf $flower_name
+        mkdir $flower_name
+        cd $flower_name
+        cp -r ~/docs_git .git
+        cp -r ~/docs_temp/* .
+        touch .nojekyll
+
+        git add .
+        git commit -a -m "Docs for git-$GITHUB_SHA"
+        git push origin gh-pages -f
