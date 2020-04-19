@@ -113,7 +113,6 @@ class MapSource:
         subdomains="abc",
         **kwargs
     ):
-        super().__init__()
         if cache_key is None:
             # possible cache hit, but very unlikely
             cache_key = hashlib.sha224(url.encode("utf8")).hexdigest()[:10]

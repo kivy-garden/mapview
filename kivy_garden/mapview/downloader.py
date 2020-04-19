@@ -43,7 +43,6 @@ class Downloader:
             max_workers = Downloader.MAX_WORKERS
         if cap_time is None:
             cap_time = Downloader.CAP_TIME
-        super().__init__()
         self.is_paused = False
         self.cap_time = cap_time
         self.executor = ThreadPoolExecutor(max_workers=max_workers)

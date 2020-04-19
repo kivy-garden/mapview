@@ -62,10 +62,12 @@ def yLat(y):
 
 
 class KDBush:
-    # kdbush implementation from https://github.com/mourner/kdbush/blob/master/src/kdbush.js
-    #
+    """
+    kdbush implementation from:
+    https://github.com/mourner/kdbush/blob/master/src/kdbush.js
+    """
+
     def __init__(self, points, node_size=64):
-        super().__init__()
         self.points = points
         self.node_size = node_size
 
@@ -231,7 +233,6 @@ class KDBush:
 
 class Cluster:
     def __init__(self, x, y, num_points, id, props):
-        super().__init__()
         self.x = x
         self.y = y
         self.num_points = num_points
@@ -248,7 +249,6 @@ class Cluster:
 
 class Marker:
     def __init__(self, lon, lat, cls=MapMarker, options=None):
-        super().__init__()
         self.lon = lon
         self.lat = lat
         self.cls = cls
@@ -275,7 +275,6 @@ class SuperCluster:
     """
 
     def __init__(self, min_zoom=0, max_zoom=16, radius=40, extent=512, node_size=64):
-        super().__init__()
         self.min_zoom = min_zoom
         self.max_zoom = max_zoom
         self.radius = radius
