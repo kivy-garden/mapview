@@ -276,7 +276,6 @@ class MapViewScatter(Scatter):
         self.parent.on_transform(self.transform)
 
     def collide_point(self, x, y):
-        # print "collide_point", x, y
         return True
 
 
@@ -805,10 +804,6 @@ class MapView(Widget):
             x_count,
             y_count,
         ) = bbox_for_zoom(vx, vy, self.width, self.height, zoom)
-
-        # print "Range {},{} to {},{}".format(
-        #    tile_x_first, tile_y_first,
-        #    tile_x_last, tile_y_last)
 
         # Adjust tiles behind us
         for tile in self._tiles_bg[:]:

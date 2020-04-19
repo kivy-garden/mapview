@@ -294,10 +294,8 @@ class GeoJsonMapLayer(MapLayer):
         if self.parent is None:
             return
         if not update:
-            # print "Reload geojson (polygon)"
             self.g_canvas_polygon.clear()
             self._geojson_part(geojson, geotype="Polygon")
-        # print "Reload geojson (LineString)"
         self.canvas_line.clear()
         self._geojson_part(geojson, geotype="LineString")
 

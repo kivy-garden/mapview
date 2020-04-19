@@ -72,7 +72,6 @@ class MBTilesMapSource(MapSource):
             ),
             (tile.zoom, tile.tile_x, tile.tile_y),
         )
-        # print "fetch", tile.zoom, tile.tile_x, tile.tile_y
         row = c.fetchone()
         if not row:
             tile.state = "done"
