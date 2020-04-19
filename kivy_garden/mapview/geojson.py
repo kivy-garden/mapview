@@ -291,7 +291,7 @@ class GeoJsonMapLayer(MapLayer):
         self._geojson_part(geojson, geotype="LineString")
 
     def on_source(self, instance, value):
-        if value.startswith("http://") or value.startswith("https://"):
+        if value.startswith(("http://", "https://")):
             Downloader.instance(
                 cache_dir=self.cache_dir
             ).download(value, self._load_geojson_url)
