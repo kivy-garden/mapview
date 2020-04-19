@@ -72,6 +72,7 @@ class Downloader:
         if DEBUG:
             print("Downloader: download(url) {}".format(url))
         response = requests.get(url, **kwargs)
+        response.raise_for_status()
         return callback, (url, response)
 
     def _load_tile(self, tile):
