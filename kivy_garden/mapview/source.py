@@ -4,7 +4,7 @@ __all__ = ["MapSource"]
 
 from kivy.metrics import dp
 from math import cos, ceil, log, tan, pi, atan, exp
-from kivy_garden.mapview import (
+from kivy_garden.mapview.constants import (
     MIN_LONGITUDE,
     MAX_LONGITUDE,
     MIN_LATITUDE,

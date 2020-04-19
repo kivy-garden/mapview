@@ -33,7 +33,7 @@ from kivy.graphics import Mesh, Line, Color
 from kivy.graphics.tesselator import Tesselator, WINDING_ODD, TYPE_POLYGONS
 from kivy.utils import get_color_from_hex
 from kivy.metrics import dp
-from kivy_garden.mapview import CACHE_DIR
+from kivy_garden.mapview.constants import CACHE_DIR
 from kivy_garden.mapview.view import MapLayer
 from kivy_garden.mapview.downloader import Downloader
 

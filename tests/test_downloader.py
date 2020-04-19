@@ -1,4 +1,5 @@
-from kivy_garden.mapview.downloader import CACHE_DIR, Downloader
+from kivy_garden.mapview.downloader import Downloader
+from kivy_garden.mapview.constants import CACHE_DIR
 
 
 class TestDownloader:
