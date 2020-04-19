@@ -56,6 +56,23 @@ jobs:
     - name: Test with pytest
       run: |
         python3 -m pytest --cov=kivy_garden.mapview --cov-report term --cov-branch tests/
+    - name: Coveralls
+      # use this custom action until Coveralls fixes uptream issues
+      # https://github.com/coverallsapp/github-action/issues/30
+      uses: AndreMiras/coveralls-python-action@develop
+      with:
+        parallel: true
+
+  coveralls_finish:
+    needs: linux_test
+    runs-on: ubuntu-latest
+    steps:
+    - name: Coveralls Finished
+      # use this custom action until Coveralls fixes uptream issues
+      # https://github.com/coverallsapp/github-action/issues/30
+      uses: AndreMiras/coveralls-python-action@develop
+      with:
+        parallel-finished: true
 
   windows_test:
     runs-on: windows-latest
