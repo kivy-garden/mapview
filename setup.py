@@ -18,7 +18,7 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 
 URL = 'https://github.com/kivy-garden/mapview'
 
-setup(
+setup_params = dict(
     name='kivy_garden.mapview',
     version=__version__,
     description='A kivy garden mapview demo.',
@@ -54,3 +54,12 @@ setup(
         'Source': URL,
     },
 )
+
+
+def run_setup():
+    setup(**setup_params)
+
+
+# makes sure the setup doesn't run at import time
+if __name__ == "__main__":
+    run_setup()

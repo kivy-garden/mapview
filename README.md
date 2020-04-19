@@ -42,10 +42,8 @@ otherwise you'll have an issue when importing `urllib3` from `requests`.
 
 # Install
 
-Install the mapview garden module using the `garden` tool:
-
 ```
-garden install mapview
+pip install mapview
 ```
 
 # Usage
@@ -54,7 +52,7 @@ This widget can be either used within Python or Kv. That's said, not
 everything can be done in Kv, to prevent too much computing.
 
 ```python
-from kivy.garden.mapview import MapView
+from kivy_garden.mapview import MapView
 from kivy.app import App
 
 class MapViewApp(App):
