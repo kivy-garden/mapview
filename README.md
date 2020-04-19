@@ -1,7 +1,7 @@
 # Mapview
 
 [![Github Build Status](https://github.com/kivy-garden/mapview/workflows/Garden%20flower/badge.svg)](https://github.com/kivy-garden/mapview/actions)
-[![Build Status](https://travis-ci.com/kivy-garden/garden.mapview.svg?branch=master)](https://travis-ci.com/kivy-garden/garden.mapview)
+[![Build Status](https://travis-ci.com/kivy-garden/mapview.svg?branch=develop)](https://travis-ci.com/kivy-garden/mapview)
 
 Mapview is a Kivy widget for displaying interactive maps. It has been
 designed with lot of inspirations of
@@ -42,10 +42,8 @@ otherwise you'll have an issue when importing `urllib3` from `requests`.
 
 # Install
 
-Install the mapview garden module using the `garden` tool:
-
 ```
-garden install mapview
+pip install mapview
 ```
 
 # Usage
@@ -54,7 +52,7 @@ This widget can be either used within Python or Kv. That's said, not
 everything can be done in Kv, to prevent too much computing.
 
 ```python
-from kivy.garden.mapview import MapView
+from kivy_garden.mapview import MapView
 from kivy.app import App
 
 class MapViewApp(App):

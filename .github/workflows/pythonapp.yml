@@ -11,12 +11,9 @@ jobs:
       with:
         python-version: 3.x
     - name: Install dependencies
-      run: |
-        python3 -m pip install --upgrade pip virtualenv wheel setuptools
-    - name: Lint with pycodestyle
-      run: |
-        python3 -m pip install flake8
-        python3 -m flake8 . --count --ignore=E125,E126,E127,E128,E402,E741,E731,W503,F401,W504,F841 --show-source --statistics --max-line-length=80 --exclude=__pycache__,.tox,.git/,doc/
+      run: python3 -m pip install tox>=2.0
+    - name: Linting
+      run: python3 -m tox -e pep8
 
   linux_test:
     runs-on: ubuntu-18.04
@@ -58,8 +55,7 @@ jobs:
         draft: true
     - name: Test with pytest
       run: |
-        flower_name=$(python3 -c "print('$GITHUB_REPOSITORY'.split('/')[-1])")
-        python3 -m pytest --cov=kivy_garden.$flower_name --cov-report term --cov-branch
+        python3 -m pytest --cov=kivy_garden.mapview --cov-report term --cov-branch tests/
 
   windows_test:
     runs-on: windows-latest
@@ -79,8 +75,7 @@ jobs:
       run: python -m pip install -e .[dev,ci] --extra-index-url https://kivy-garden.github.io/simple/
     - name: Test with pytest
       run: |
-        $flower_name=(python -c "print('$GITHUB_REPOSITORY'.split('/')[-1])")
-        python -m pytest --cov=kivy_garden.$flower_name --cov-report term --cov-branch
+        python -m pytest --cov=kivy_garden.mapview --cov-report term --cov-branch tests/
 
   docs:
     runs-on: ubuntu-18.04
@@ -112,7 +107,6 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        flower_name=$(python3 -c "print('$GITHUB_REPOSITORY'.split('/')[-1])")
         cp -r doc/build/html ~/docs_temp
 
         git config --global user.email "kivy@kivy.org"
@@ -123,9 +117,9 @@ jobs:
         git checkout --orphan gh-pages
         cp -r .git ~/docs_git
         cd ..
-        rm -rf $flower_name
-        mkdir $flower_name
-        cd $flower_name
+        rm -rf mapview
+        mkdir mapview
+        cd mapview
         cp -r ~/docs_git .git
         cp -r ~/docs_temp/* .
         touch .nojekyll

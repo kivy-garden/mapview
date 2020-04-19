@@ -11,3 +11,14 @@ install:
 
 script:
   - docker run -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix mapview-linux /bin/sh -c 'tox'
+
+# Deploy to PyPI using token set in `PYPI_PASSWORD` environment variable
+# https://pypi.org/manage/account/token/
+# https://travis-ci.com/github/kivy-garden/mapview/settings
+deploy:
+  provider: pypi
+  distributions: sdist bdist_wheel
+  user: "__token__"
+  on:
+    tags: true
+    repo: kivy-garden/mapview

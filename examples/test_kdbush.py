@@ -8,7 +8,7 @@ the selected red dot.
 from kivy.app import App
 from kivy.uix.widget import Widget
 from kivy.graphics import Color, Rectangle, Ellipse, Canvas
-from mapview.clustered_marker_layer import KDBush, Marker
+from kivy_garden.mapview.clustered_marker_layer import KDBush, Marker
 from random import random
 
 # creating markers

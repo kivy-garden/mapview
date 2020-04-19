@@ -26,7 +26,7 @@ try:
 except KeyError:
     pass
 
-from mapview.types import Coordinate, Bbox
-from mapview.source import MapSource
-from mapview.view import MapView, MapMarker, MapLayer, MarkerMapLayer, \
+from kivy_garden.mapview.types import Coordinate, Bbox
+from kivy_garden.mapview.source import MapSource
+from kivy_garden.mapview.view import MapView, MapMarker, MapLayer, MarkerMapLayer, \
     MapMarkerPopup

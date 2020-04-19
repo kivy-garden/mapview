@@ -5,7 +5,7 @@ if __name__ == '__main__' and __package__ is None:
     from os import path
     sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
 
-from mapview import MapView, MapSource
+from kivy_garden.mapview import MapView, MapSource
 
 kwargs = {}
 if len(sys.argv) > 1:

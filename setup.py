@@ -7,8 +7,7 @@ from os import path
 
 here = path.abspath(path.dirname(__file__))
 
-filename = path.join(here, 'kivy_garden', 'flower', '_version.py')
-# change this                              ^^^^^^
+filename = path.join(here, 'kivy_garden', 'mapview', '_version.py')
 locals = {}
 with open(filename, "rb") as fh:
     exec(compile(fh.read(), filename, 'exec'), globals(), locals)
@@ -17,12 +16,12 @@ __version__ = locals['__version__']
 with open(path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
-URL = 'https://github.com/kivy-garden/flower'
+URL = 'https://github.com/kivy-garden/mapview'
 
-setup(
-    name='kivy_garden.flower',
+setup_params = dict(
+    name='kivy_garden.mapview',
     version=__version__,
-    description='A kivy garden flower demo.',
+    description='A kivy garden mapview demo.',
     long_description=long_description,
     long_description_content_type='text/markdown',
     url=URL,
@@ -43,7 +42,7 @@ setup(
     packages=find_namespace_packages(include=['kivy_garden.*']),
     install_requires=[],
     extras_require={
-        'dev': ['pytest>=3.6', 'pytest-cov', 'pytest-asyncio',
+        'dev': ['pytest>=3.6', 'pytest-cov', 'pytest-asyncio', 'flake8',
                 'sphinx_rtd_theme'],
         'ci': ['coveralls', 'pycodestyle'],
     },
@@ -55,3 +54,12 @@ setup(
         'Source': URL,
     },
 )
+
+
+def run_setup():
+    setup(**setup_params)
+
+
+# makes sure the setup doesn't run at import time
+if __name__ == "__main__":
+    run_setup()

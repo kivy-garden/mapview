@@ -10,7 +10,7 @@ from random import choice
 import requests
 import traceback
 from time import time
-from mapview import CACHE_DIR
+from kivy_garden.mapview import CACHE_DIR
 
 
 DEBUG = "MAPVIEW_DEBUG_DOWNLOADER" in environ

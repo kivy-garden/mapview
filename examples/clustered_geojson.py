@@ -5,10 +5,10 @@ if __name__ == '__main__' and __package__ is None:
     from os import path
     sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
 
-from mapview import MapView, MapMarker
-from mapview.geojson import GeoJsonMapLayer
-from mapview.clustered_marker_layer import ClusteredMarkerLayer
-from mapview.utils import haversine, get_zoom_for_radius
+from kivy_garden.mapview import MapView, MapMarker
+from kivy_garden.mapview.geojson import GeoJsonMapLayer
+from kivy_garden.mapview.clustered_marker_layer import ClusteredMarkerLayer
+from kivy_garden.mapview.utils import haversine, get_zoom_for_radius
 
 source = sys.argv[1]
 

@@ -1,5 +1,5 @@
 import unittest
-from mapview import MapView
+from kivy_garden.mapview import MapView
 
 
 class TextInputTest(unittest.TestCase):

@@ -6,7 +6,7 @@ if __name__ == '__main__' and __package__ is None:
     sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
 
 root = Builder.load_string("""
-#:import MapSource mapview.MapSource
+#:import MapSource kivy_garden.mapview.MapSource
 
 <Toolbar@BoxLayout>:
     size_hint_y: None
