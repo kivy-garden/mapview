@@ -42,7 +42,7 @@ setup(
     packages=find_namespace_packages(include=['kivy_garden.*']),
     install_requires=[],
     extras_require={
-        'dev': ['pytest>=3.6', 'pytest-cov', 'pytest-asyncio',
+        'dev': ['pytest>=3.6', 'pytest-cov', 'pytest-asyncio', 'flake8',
                 'sphinx_rtd_theme'],
         'ci': ['coveralls', 'pycodestyle'],
     },
