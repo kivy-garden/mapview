@@ -3,6 +3,7 @@
 [![Github Build Status](https://github.com/kivy-garden/mapview/workflows/Tests/badge.svg)](https://github.com/kivy-garden/mapview/actions?query=workflow%3ATests)
 [![Build Status](https://travis-ci.com/kivy-garden/mapview.svg?branch=develop)](https://travis-ci.com/kivy-garden/mapview)
 [![Coverage Status](https://coveralls.io/repos/github/kivy-garden/mapview/badge.svg?branch=develop)](https://coveralls.io/github/kivy-garden/mapview?branch=develop)
+[![PyPI version](https://badge.fury.io/py/mapview.svg)](https://badge.fury.io/py/mapview)
 
 Mapview is a Kivy widget for displaying interactive maps. It has been
 designed with lot of inspirations of

@@ -6,7 +6,7 @@
 
 ## [1.0.2]
 
-  - Fix `AttributeError` on `GeoJsonMapLayer.canvas_line`
+  - Fix `AttributeError` on `GeoJsonMapLayer.canvas_line`, refs #12
 
 ## [1.0.1]
 
