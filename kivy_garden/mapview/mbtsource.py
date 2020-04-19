@@ -20,7 +20,7 @@ import io
 
 class MBTilesMapSource(MapSource):
     def __init__(self, filename, **kwargs):
-        super(MBTilesMapSource, self).__init__(**kwargs)
+        super().__init__(**kwargs)
         self.filename = filename
         self.db = sqlite3.connect(filename)
 
@@ -96,19 +96,19 @@ class MBTilesMapSource(MapSource):
     def get_x(self, zoom, lon):
         if self.is_xy:
             return lon
-        return super(MBTilesMapSource, self).get_x(zoom, lon)
+        return super().get_x(zoom, lon)
 
     def get_y(self, zoom, lat):
         if self.is_xy:
             return lat
-        return super(MBTilesMapSource, self).get_y(zoom, lat)
+        return super().get_y(zoom, lat)
 
     def get_lon(self, zoom, x):
         if self.is_xy:
             return x
-        return super(MBTilesMapSource, self).get_lon(zoom, x)
+        return super().get_lon(zoom, x)
 
     def get_lat(self, zoom, y):
         if self.is_xy:
             return y
-        return super(MBTilesMapSource, self).get_lat(zoom, y)
+        return super().get_lat(zoom, y)

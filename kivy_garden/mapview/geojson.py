@@ -195,7 +195,7 @@ class GeoJsonMapLayer(MapLayer):
     def __init__(self, **kwargs):
         self.first_time = True
         self.initial_zoom = None
-        super(GeoJsonMapLayer, self).__init__(**kwargs)
+        super().__init__(**kwargs)
         with self.canvas:
             self.canvas_polygon = Canvas()
             self.canvas_line = Canvas()

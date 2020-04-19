@@ -91,7 +91,7 @@ class ClickableLabel(Label):
 
 class Tile(Rectangle):
     def __init__(self, *args, **kwargs):
-        super(Tile, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
         self.cache_dir = kwargs.get('cache_dir', CACHE_DIR)
 
     @property
@@ -152,7 +152,7 @@ class MapMarkerPopup(MapMarker):
         if not self.placeholder:
             self.placeholder = widget
             if self.is_open:
-                super(MapMarkerPopup, self).add_widget(self.placeholder)
+                super().add_widget(self.placeholder)
         else:
             self.placeholder.add_widget(widget)
 
@@ -160,7 +160,7 @@ class MapMarkerPopup(MapMarker):
         if widget is not self.placeholder:
             self.placeholder.remove_widget(widget)
         else:
-            super(MapMarkerPopup, self).remove_widget(widget)
+            super().remove_widget(widget)
 
     def on_is_open(self, *args):
         self.refresh_open_status()
@@ -170,9 +170,9 @@ class MapMarkerPopup(MapMarker):
 
     def refresh_open_status(self):
         if not self.is_open and self.placeholder.parent:
-            super(MapMarkerPopup, self).remove_widget(self.placeholder)
+            super().remove_widget(self.placeholder)
         elif self.is_open and not self.placeholder.parent:
-            super(MapMarkerPopup, self).add_widget(self.placeholder)
+            super().add_widget(self.placeholder)
 
 
 class MapLayer(Widget):
@@ -201,7 +201,7 @@ class MarkerMapLayer(MapLayer):
 
     def __init__(self, **kwargs):
         self.markers = []
-        super(MarkerMapLayer, self).__init__(**kwargs)
+        super().__init__(**kwargs)
 
     def insert_marker(self, marker, **kwargs):
         if self.order_marker_by_latitude:
@@ -212,7 +212,7 @@ class MarkerMapLayer(MapLayer):
             if before:
                 kwargs['index'] = before[-1][0] + 1
 
-        super(MarkerMapLayer, self).add_widget(marker, **kwargs)
+        super().add_widget(marker, **kwargs)
 
     def add_widget(self, marker):
         marker._layer = self
@@ -223,7 +223,7 @@ class MarkerMapLayer(MapLayer):
         marker._layer = None
         if marker in self.markers:
             self.markers.remove(marker)
-        super(MarkerMapLayer, self).remove_widget(marker)
+        super().remove_widget(marker)
 
     def reposition(self):
         if not self.markers:
@@ -241,7 +241,7 @@ class MarkerMapLayer(MapLayer):
                 if not marker.parent:
                     self.insert_marker(marker)
             else:
-                super(MarkerMapLayer, self).remove_widget(marker)
+                super().remove_widget(marker)
 
     def set_marker_position(self, mapview, marker):
         x, y = mapview.get_window_xy_from(marker.lat, marker.lon, mapview.zoom)
@@ -256,7 +256,7 @@ class MarkerMapLayer(MapLayer):
 class MapViewScatter(Scatter):
     # internal
     def on_transform(self, *args):
-        super(MapViewScatter, self).on_transform(*args)
+        super().on_transform(*args)
         self.parent.on_transform(self.transform)
 
     def collide_point(self, x, y):
@@ -488,7 +488,7 @@ class MapView(Widget):
         else:
             self.canvas = self.canvas_layers_out
         layer.canvas_parent = self.canvas
-        super(MapView, self).add_widget(layer)
+        super().add_widget(layer)
         self.canvas = c
 
     def remove_layer(self, layer):
@@ -497,7 +497,7 @@ class MapView(Widget):
         c = self.canvas
         self._layers.remove(layer)
         self.canvas = layer.canvas_parent
-        super(MapView, self).remove_widget(layer)
+        super().remove_widget(layer)
         self.canvas = c
 
     def sync_to(self, other):
@@ -536,7 +536,7 @@ class MapView(Widget):
         Clock.schedule_interval(self._animate_color, 1 / 60.)
         self.lat = kwargs.get("lat", self.lat)
         self.lon = kwargs.get("lon", self.lon)
-        super(MapView, self).__init__(**kwargs)
+        super().__init__(**kwargs)
 
     def _animate_color(self, dt):
         # fast path
@@ -571,7 +571,7 @@ class MapView(Widget):
         elif isinstance(widget, MapLayer):
             self.add_layer(widget)
         else:
-            super(MapView, self).add_widget(widget)
+            super().add_widget(widget)
 
     def remove_widget(self, widget):
         if isinstance(widget, MapMarker):
@@ -579,7 +579,7 @@ class MapView(Widget):
         elif isinstance(widget, MapLayer):
             self.remove_layer(widget)
         else:
-            super(MapView, self).remove_widget(widget)
+            super().remove_widget(widget)
 
     def on_map_relocated(self, zoom, coord):
         pass
@@ -639,7 +639,7 @@ class MapView(Widget):
         self._touch_count += 1
         if self._touch_count == 1:
             self._touch_zoom = (self.zoom, self._scale)
-        return super(MapView, self).on_touch_down(touch)
+        return super().on_touch_down(touch)
 
     def on_touch_up(self, touch):
         if touch.grab_current == self:
@@ -656,7 +656,7 @@ class MapView(Widget):
                     self.animated_diff_scale_at(2. - cur_scale, *touch.pos)
                 self._pause = False
             return True
-        return super(MapView, self).on_touch_up(touch)
+        return super().on_touch_up(touch)
 
     def on_transform(self, *args):
         self._invalid_scale = True

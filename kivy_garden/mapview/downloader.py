@@ -19,7 +19,7 @@ DEBUG = "MAPVIEW_DEBUG_DOWNLOADER" in environ
 USER_AGENT = 'Kivy-garden.mapview'
 
 
-class Downloader(object):
+class Downloader:
     _instance = None
     MAX_WORKERS = 5
     CAP_TIME = 0.064  # 15 FPS
@@ -38,7 +38,7 @@ class Downloader(object):
             max_workers = Downloader.MAX_WORKERS
         if cap_time is None:
             cap_time = Downloader.CAP_TIME
-        super(Downloader, self).__init__()
+        super().__init__()
         self.is_paused = False
         self.cap_time = cap_time
         self.executor = ThreadPoolExecutor(max_workers=max_workers)

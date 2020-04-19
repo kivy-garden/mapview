@@ -11,7 +11,7 @@ from kivy_garden.mapview.utils import clamp
 import hashlib
 
 
-class MapSource(object):
+class MapSource:
     """Base class for implementing a map source / provider
     """
 
@@ -48,7 +48,7 @@ class MapSource(object):
             image_ext="png",
             attribution="© OpenStreetMap contributors",
             subdomains="abc", **kwargs):
-        super(MapSource, self).__init__()
+        super().__init__()
         if cache_key is None:
             # possible cache hit, but very unlikely
             cache_key = hashlib.sha224(url.encode("utf8")).hexdigest()[:10]

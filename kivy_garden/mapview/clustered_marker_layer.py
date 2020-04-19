@@ -53,11 +53,11 @@ def yLat(y):
     return 360 * atan(exp(y2)) / pi - 90
 
 
-class KDBush(object):
+class KDBush:
     # kdbush implementation from https://github.com/mourner/kdbush/blob/master/src/kdbush.js
     #
     def __init__(self, points, node_size=64):
-        super(KDBush, self).__init__()
+        super().__init__()
         self.points = points
         self.node_size = node_size
 
@@ -222,9 +222,9 @@ class KDBush(object):
         return dx * dx + dy * dy
 
 
-class Cluster(object):
+class Cluster:
     def __init__(self, x, y, num_points, id, props):
-        super(Cluster, self).__init__()
+        super().__init__()
         self.x = x
         self.y = y
         self.num_points = num_points
@@ -239,9 +239,9 @@ class Cluster(object):
         self.lat = yLat(y)
 
 
-class Marker(object):
+class Marker:
     def __init__(self, lon, lat, cls=MapMarker, options=None):
-        super(Marker, self).__init__()
+        super().__init__()
         self.lon = lon
         self.lat = lat
         self.cls = cls
@@ -262,7 +262,7 @@ class Marker(object):
                                                          self.source)
 
 
-class SuperCluster(object):
+class SuperCluster:
     """Port of supercluster from mapbox in pure python
     """
 
@@ -272,7 +272,7 @@ class SuperCluster(object):
                  radius=40,
                  extent=512,
                  node_size=64):
-        super(SuperCluster, self).__init__()
+        super().__init__()
         self.min_zoom = min_zoom
         self.max_zoom = max_zoom
         self.radius = radius
@@ -393,7 +393,7 @@ class ClusteredMarkerLayer(MapLayer):
     def __init__(self, **kwargs):
         self.cluster = None
         self.cluster_markers = []
-        super(ClusteredMarkerLayer, self).__init__(**kwargs)
+        super().__init__(**kwargs)
 
     def add_marker(self, lon, lat, cls=MapMarker, options=None):
         if options is None:
