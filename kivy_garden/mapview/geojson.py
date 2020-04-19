@@ -311,8 +311,8 @@ class GeoJsonMapLayer(MapLayer):
                 geojson = json.load(fd)
             self.geojson = geojson
 
-    def _load_geojson_url(self, url, r):
-        self.geojson = r.json()
+    def _load_geojson_url(self, url, response):
+        self.geojson = response.json()
 
     def _geojson_part(self, part, geotype=None):
         tp = part["type"]

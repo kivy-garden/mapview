@@ -6,12 +6,7 @@ from kivy.clock import Clock
 
 from kivy_garden.mapview import MapView
 from kivy_garden.mapview.geojson import GeoJsonMapLayer
-
-
-def patch_requests_get(response_json=None):
-    response = mock.Mock()
-    response.return_value.json.return_value = response_json
-    return mock.patch("requests.get", response)
+from tests.utils import patch_requests_get
 
 
 def load_json(filename):
@@ -45,7 +40,8 @@ class TestGeoJsonMapLayer:
             maplayer = GeoJsonMapLayer(**kwargs)
         assert maplayer.source == source
         assert maplayer.geojson is None
-        Clock.tick()
+        while maplayer.geojson is None:
+            Clock.tick()
         assert maplayer.geojson == response_json
         assert m_get.call_args_list == [mock.call(source)]
 

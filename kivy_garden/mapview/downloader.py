@@ -71,8 +71,8 @@ class Downloader:
     def _download_url(self, url, callback, kwargs):
         if DEBUG:
             print("Downloader: download(url) {}".format(url))
-        r = requests.get(url, **kwargs)
-        return callback, (url, r,)
+        response = requests.get(url, **kwargs)
+        return callback, (url, response)
 
     def _load_tile(self, tile):
         if tile.state == "done":
@@ -88,10 +88,10 @@ class Downloader:
         )
         if DEBUG:
             print("Downloader: download(tile) {}".format(uri))
-        req = requests.get(uri, headers={'User-agent': USER_AGENT}, timeout=5)
+        response = requests.get(uri, headers={'User-agent': USER_AGENT}, timeout=5)
         try:
-            req.raise_for_status()
-            data = req.content
+            response.raise_for_status()
+            data = response.content
             with open(cache_fn, "wb") as fd:
                 fd.write(data)
             if DEBUG:

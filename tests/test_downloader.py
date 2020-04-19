@@ -1,8 +1,16 @@
+from unittest import mock
+
+from kivy.clock import Clock
+
 from kivy_garden.mapview.constants import CACHE_DIR
 from kivy_garden.mapview.downloader import Downloader
+from tests.utils import patch_requests_get
 
 
 class TestDownloader:
+    def teardown_method(self):
+        Downloader._instance = None
+
     def test_instance(self):
         """Makes sure instance is a singleton."""
         assert Downloader._instance is None
@@ -14,3 +22,15 @@ class TestDownloader:
         new_cache_dir = "new_cache_dir"
         downloader = Downloader.instance(new_cache_dir)
         assert downloader.cache_dir == new_cache_dir
+
+    def test_download(self):
+        """Checks download() callback."""
+        callback = mock.Mock()
+        url = "https://ifconfig.me/"
+        downloader = Downloader.instance()
+        with patch_requests_get() as m_get:
+            downloader.download(url, callback)
+        assert m_get.call_args_list == [mock.call(url)]
+        assert callback.call_args_list == []
+        Clock.tick()
+        assert callback.call_args_list == [mock.call(url, mock.ANY)]
