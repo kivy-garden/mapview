@@ -28,9 +28,25 @@ class TestDownloader:
         callback = mock.Mock()
         url = "https://ifconfig.me/"
         downloader = Downloader.instance()
+        assert len(downloader._futures) == 0
         with patch_requests_get() as m_get:
             downloader.download(url, callback)
         assert m_get.call_args_list == [mock.call(url)]
         assert callback.call_args_list == []
+        assert len(downloader._futures) == 1
         Clock.tick()
         assert callback.call_args_list == [mock.call(url, mock.ANY)]
+        assert len(downloader._futures) == 0
+
+    def test_download_status_error(self):
+        """Error status code should be checked, but is currently not."""
+        callback = mock.Mock()
+        url = "https://httpstat.us/404"
+        downloader = Downloader.instance()
+        assert len(downloader._futures) == 0
+        downloader.download(url, callback)
+        assert len(downloader._futures) == 1
+        assert callback.call_args_list == []
+        while len(downloader._futures) > 0:
+            Clock.tick()
+        assert len(downloader._futures) == 0
