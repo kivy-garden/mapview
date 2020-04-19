@@ -2,7 +2,7 @@
 
 __all__ = ["clamp", "haversine", "get_zoom_for_radius"]
 
-from math import radians, cos, sin, asin, sqrt, pi
+from math import asin, cos, pi, radians, sin, sqrt
 
 from kivy.core.window import Window
 from kivy.metrics import dp

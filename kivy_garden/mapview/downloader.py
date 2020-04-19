@@ -2,16 +2,17 @@
 
 __all__ = ["Downloader"]
 
-from kivy.clock import Clock
-from os.path import join, exists
-from os import makedirs, environ
-from concurrent.futures import ThreadPoolExecutor, TimeoutError, as_completed
-from random import choice
-import requests
 import traceback
+from concurrent.futures import ThreadPoolExecutor, TimeoutError, as_completed
+from os import environ, makedirs
+from os.path import exists, join
+from random import choice
 from time import time
-from kivy_garden.mapview.constants import CACHE_DIR
 
+import requests
+from kivy.clock import Clock
+
+from kivy_garden.mapview.constants import CACHE_DIR
 
 DEBUG = "MAPVIEW_DEBUG_DOWNLOADER" in environ
 # user agent is needed because since may 2019 OSM gives me a 429 or 403 server error

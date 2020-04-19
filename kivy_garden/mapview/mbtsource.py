@@ -10,12 +10,15 @@ See: http://mbtiles.org/
 __all__ = ["MBTilesMapSource"]
 
 
-from kivy_garden.mapview.source import MapSource
-from kivy_garden.mapview.downloader import Downloader
-from kivy.core.image import Image as CoreImage, ImageLoader
-import threading
-import sqlite3
 import io
+import sqlite3
+import threading
+
+from kivy.core.image import Image as CoreImage
+from kivy.core.image import ImageLoader
+
+from kivy_garden.mapview.downloader import Downloader
+from kivy_garden.mapview.source import MapSource
 
 
 class MBTilesMapSource(MapSource):

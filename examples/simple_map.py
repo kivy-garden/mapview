@@ -1,7 +1,8 @@
 import sys
+
 from kivy.base import runTouchApp
 
-from kivy_garden.mapview import MapView, MapSource
+from kivy_garden.mapview import MapSource, MapView
 
 kwargs = {}
 if len(sys.argv) > 1:

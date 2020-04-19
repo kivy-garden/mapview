@@ -2,40 +2,41 @@
 
 __all__ = ["MapView", "MapMarker", "MapMarkerPopup", "MapLayer", "MarkerMapLayer"]
 
-from os.path import join, dirname
+import webbrowser
+from itertools import takewhile
+from math import ceil
+from os.path import dirname, join
+
 from kivy.clock import Clock
-from kivy.metrics import dp
-from kivy.uix.widget import Widget
-from kivy.uix.label import Label
-from kivy.uix.image import Image
-from kivy.uix.scatter import Scatter
-from kivy.uix.behaviors import ButtonBehavior
-from kivy.properties import (
-    NumericProperty,
-    ObjectProperty,
-    ListProperty,
-    AliasProperty,
-    BooleanProperty,
-    StringProperty,
-)
+from kivy.compat import string_types
 from kivy.graphics import Canvas, Color, Rectangle
 from kivy.graphics.transformation import Matrix
 from kivy.lang import Builder
-from kivy.compat import string_types
-from math import ceil
+from kivy.metrics import dp
+from kivy.properties import (
+    AliasProperty,
+    BooleanProperty,
+    ListProperty,
+    NumericProperty,
+    ObjectProperty,
+    StringProperty,
+)
+from kivy.uix.behaviors import ButtonBehavior
+from kivy.uix.image import Image
+from kivy.uix.label import Label
+from kivy.uix.scatter import Scatter
+from kivy.uix.widget import Widget
+
+from kivy_garden.mapview import Bbox, Coordinate
 from kivy_garden.mapview.constants import (
-    MIN_LONGITUDE,
+    CACHE_DIR,
+    MAX_LATITUDE,
     MAX_LONGITUDE,
     MIN_LATITUDE,
-    MAX_LATITUDE,
-    CACHE_DIR,
+    MIN_LONGITUDE,
 )
-from kivy_garden.mapview import Coordinate, Bbox
 from kivy_garden.mapview.source import MapSource
 from kivy_garden.mapview.utils import clamp
-from itertools import takewhile
-
-import webbrowser
 
 Builder.load_string(
     """

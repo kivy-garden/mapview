@@ -20,22 +20,26 @@ Supports:
 __all__ = ["GeoJsonMapLayer"]
 
 import json
-from kivy.properties import StringProperty, ObjectProperty
+
 from kivy.graphics import (
     Canvas,
-    PushMatrix,
-    PopMatrix,
+    Color,
+    Line,
     MatrixInstruction,
-    Translate,
+    Mesh,
+    PopMatrix,
+    PushMatrix,
     Scale,
+    Translate,
 )
-from kivy.graphics import Mesh, Line, Color
-from kivy.graphics.tesselator import Tesselator, WINDING_ODD, TYPE_POLYGONS
-from kivy.utils import get_color_from_hex
+from kivy.graphics.tesselator import TYPE_POLYGONS, WINDING_ODD, Tesselator
 from kivy.metrics import dp
+from kivy.properties import ObjectProperty, StringProperty
+from kivy.utils import get_color_from_hex
+
 from kivy_garden.mapview.constants import CACHE_DIR
-from kivy_garden.mapview.view import MapLayer
 from kivy_garden.mapview.downloader import Downloader
+from kivy_garden.mapview.view import MapLayer
 
 COLORS = {
     'aliceblue': '#f0f8ff',

@@ -9,10 +9,11 @@ is not the case on every platform at 1.8.1, but we're going to fix it.
 """
 
 import sys
+
 from kivy.base import runTouchApp
+
 from kivy_garden.mapview import MapView
 from kivy_garden.mapview.mbtsource import MBTilesMapSource
-
 
 source = MBTilesMapSource(sys.argv[1])
 runTouchApp(

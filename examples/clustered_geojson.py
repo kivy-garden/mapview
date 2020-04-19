@@ -1,10 +1,11 @@
-from kivy.base import runTouchApp
 import sys
 
-from kivy_garden.mapview import MapView, MapMarker
-from kivy_garden.mapview.geojson import GeoJsonMapLayer
+from kivy.base import runTouchApp
+
+from kivy_garden.mapview import MapMarker, MapView
 from kivy_garden.mapview.clustered_marker_layer import ClusteredMarkerLayer
-from kivy_garden.mapview.utils import haversine, get_zoom_for_radius
+from kivy_garden.mapview.geojson import GeoJsonMapLayer
+from kivy_garden.mapview.utils import get_zoom_for_radius, haversine
 
 source = sys.argv[1]
 

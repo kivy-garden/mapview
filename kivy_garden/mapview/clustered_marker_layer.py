@@ -4,18 +4,19 @@ Layer that support point clustering
 ===================================
 """
 
+from math import atan, exp, floor, log, pi, sin, sqrt
 from os.path import dirname, join
-from math import sin, log, pi, atan, exp, floor, sqrt
-from kivy_garden.mapview.view import MapLayer, MapMarker
+
 from kivy.lang import Builder
 from kivy.metrics import dp
 from kivy.properties import (
-    ObjectProperty,
-    NumericProperty,
-    StringProperty,
     ListProperty,
+    NumericProperty,
+    ObjectProperty,
+    StringProperty,
 )
 
+from kivy_garden.mapview.view import MapLayer, MapMarker
 
 Builder.load_string(
     """

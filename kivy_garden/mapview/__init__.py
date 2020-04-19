@@ -7,14 +7,14 @@ MapView
 
 MapView is a Kivy widget that display maps.
 """
-from kivy_garden.mapview.types import Coordinate, Bbox
 from kivy_garden.mapview.source import MapSource
+from kivy_garden.mapview.types import Bbox, Coordinate
 from kivy_garden.mapview.view import (
-    MapView,
-    MapMarker,
     MapLayer,
-    MarkerMapLayer,
+    MapMarker,
     MapMarkerPopup,
+    MapView,
+    MarkerMapLayer,
 )
 
 __all__ = [

@@ -2,18 +2,20 @@
 
 __all__ = ["MapSource"]
 
+import hashlib
+from math import atan, ceil, cos, exp, log, pi, tan
+
 from kivy.metrics import dp
-from math import cos, ceil, log, tan, pi, atan, exp
+
 from kivy_garden.mapview.constants import (
-    MIN_LONGITUDE,
+    CACHE_DIR,
+    MAX_LATITUDE,
     MAX_LONGITUDE,
     MIN_LATITUDE,
-    MAX_LATITUDE,
-    CACHE_DIR,
+    MIN_LONGITUDE,
 )
 from kivy_garden.mapview.downloader import Downloader
 from kivy_garden.mapview.utils import clamp
-import hashlib
 
 
 class MapSource:
