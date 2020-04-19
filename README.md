@@ -32,13 +32,7 @@ the latests state-of-the-art Kivy's methods.
 
 # Requirements
 
-It requires the `concurrent.futures` and `requests`. If you are on python 2.7,
-you can use `futures`:
-
-```
-pip install futures requests
-```
-
+It requires the `concurrent.futures` and `requests`.
 If you use it on Android / iOS, don't forget to add `openssl` as a requirements,
 otherwise you'll have an issue when importing `urllib3` from `requests`.
 
@@ -65,7 +59,9 @@ class MapViewApp(App):
 MapViewApp().run()
 ```
 
-More extensive documentation will come soon.
+Find out more:
+- [examples/](https://github.com/kivy-garden/mapview/tree/master/examples)
+- <https://mapview.readthedocs.io/en/latest/>
 
 
 Contributing
