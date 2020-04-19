@@ -198,6 +198,7 @@ class GeoJsonMapLayer(MapLayer):
         super(GeoJsonMapLayer, self).__init__(**kwargs)
         with self.canvas:
             self.canvas_polygon = Canvas()
+            self.canvas_line = Canvas()
         with self.canvas_polygon.before:
             PushMatrix()
             self.g_matrix = MatrixInstruction()

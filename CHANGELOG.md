@@ -1,5 +1,9 @@
 # Change Log
 
+## [Unreleased]
+
+  - Fix `AttributeError` on `GeoJsonMapLayer.canvas_line`
+
 ## [1.0.1]
 
   - Migrate to kivy-garden/mapview
