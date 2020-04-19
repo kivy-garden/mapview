@@ -25,7 +25,7 @@ class Downloader:
     CAP_TIME = 0.064  # 15 FPS
 
     @staticmethod
-    def instance(cache_dir):
+    def instance(cache_dir=None):
         if Downloader._instance is None:
             if not cache_dir:
                 cache_dir = CACHE_DIR
