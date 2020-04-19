@@ -1,6 +1,6 @@
 # Change Log
 
-## [Unreleased]
+## [1.0.2]
 
   - Fix `AttributeError` on `GeoJsonMapLayer.canvas_line`
 
