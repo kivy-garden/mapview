@@ -21,8 +21,14 @@ __all__ = ["GeoJsonMapLayer"]
 
 import json
 from kivy.properties import StringProperty, ObjectProperty
-from kivy.graphics import (Canvas, PushMatrix, PopMatrix, MatrixInstruction,
-                           Translate, Scale)
+from kivy.graphics import (
+    Canvas,
+    PushMatrix,
+    PopMatrix,
+    MatrixInstruction,
+    Translate,
+    Scale,
+)
 from kivy.graphics import Mesh, Line, Color
 from kivy.graphics.tesselator import Tesselator, WINDING_ODD, TYPE_POLYGONS
 from kivy.utils import get_color_from_hex
@@ -178,7 +184,7 @@ COLORS = {
     'white': '#ffffff',
     'whitesmoke': '#f5f5f5',
     'yellow': '#ffff00',
-    'yellowgreen': '#9acd32'
+    'yellowgreen': '#9acd32',
 }
 
 
@@ -216,12 +222,12 @@ class GeoJsonMapLayer(MapLayer):
         if zoom is None:
             self.initial_zoom = zoom = pzoom
         if zoom != pzoom:
-            diff = 2**(pzoom - zoom)
+            diff = 2 ** (pzoom - zoom)
             vx /= diff
             vy /= diff
             self.g_scale.x = self.g_scale.y = diff
         else:
-            self.g_scale.x = self.g_scale.y = 1.
+            self.g_scale.x = self.g_scale.y = 1.0
         self.g_translate.xy = vx, vy
         self.g_matrix.matrix = self.parent._scatter.transform
 
@@ -269,14 +275,15 @@ class GeoJsonMapLayer(MapLayer):
                 for polygon in geometry["coordinates"]:
                     for coordinate in polygon[0]:
                         _submit_coordinate(coordinate)
+
         self.traverse_feature(_get_bounds)
         return bounds
 
     @property
     def center(self):
         min_lon, max_lon, min_lat, max_lat = self.bounds
-        cx = (max_lon - min_lon) / 2.
-        cy = (max_lat - min_lat) / 2.
+        cx = (max_lon - min_lon) / 2.0
+        cy = (max_lat - min_lat) / 2.0
         return min_lon + cx, min_lat + cy
 
     def on_geojson(self, instance, geojson, update=False):
@@ -292,9 +299,9 @@ class GeoJsonMapLayer(MapLayer):
 
     def on_source(self, instance, value):
         if value.startswith(("http://", "https://")):
-            Downloader.instance(
-                cache_dir=self.cache_dir
-            ).download(value, self._load_geojson_url)
+            Downloader.instance(cache_dir=self.cache_dir).download(
+                value, self._load_geojson_url
+            )
         else:
             with open(value, "rb") as fd:
                 geojson = json.load(fd)
@@ -344,10 +351,8 @@ class GeoJsonMapLayer(MapLayer):
             graphics.append(Color(*color))
             for vertices, indices in tess.meshes:
                 graphics.append(
-                    Mesh(
-                        vertices=vertices,
-                        indices=indices,
-                        mode="triangle_fan"))
+                    Mesh(vertices=vertices, indices=indices, mode="triangle_fan")
+                )
 
         elif tp == "LineString":
             stroke = get_color_from_hex(properties.get("stroke", "#ffffff"))

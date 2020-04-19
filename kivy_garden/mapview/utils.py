@@ -24,21 +24,21 @@ def haversine(lon1, lat1, lon2, lat2):
     # haversine formula
     dlon = lon2 - lon1
     dlat = lat2 - lat1
-    a = sin(dlat / 2)**2 + cos(lat1) * cos(lat2) * sin(dlon / 2)**2
+    a = sin(dlat / 2) ** 2 + cos(lat1) * cos(lat2) * sin(dlon / 2) ** 2
 
     c = 2 * asin(sqrt(a))
     km = 6367 * c
     return km
 
 
-def get_zoom_for_radius(radius_km, lat=None, tile_size=256.):
+def get_zoom_for_radius(radius_km, lat=None, tile_size=256.0):
     """See: https://wiki.openstreetmap.org/wiki/Zoom_levels"""
-    radius = radius_km * 1000.
+    radius = radius_km * 1000.0
     if lat is None:
-        lat = 0.  # Do not compensate for the latitude
+        lat = 0.0  # Do not compensate for the latitude
 
     # Calculate the equatorial circumference based on the WGS-84 radius
-    earth_circumference = 2. * pi * 6378137. * cos(lat * pi / 180.)
+    earth_circumference = 2.0 * pi * 6378137.0 * cos(lat * pi / 180.0)
 
     # Check how many tiles that are currently in view
     nr_tiles_shown = min(Window.size) / dp(tile_size)

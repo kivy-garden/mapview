@@ -33,21 +33,21 @@ class MBTilesMapSource(MapSource):
         self.max_zoom = int(metadata["maxzoom"])
         self.attribution = metadata.get("attribution", "")
         self.bounds = bounds = None
-        cx = cy = 0.
+        cx = cy = 0.0
         cz = 5
         if "bounds" in metadata:
             self.bounds = bounds = map(float, metadata["bounds"].split(","))
         if "center" in metadata:
             cx, cy, cz = map(float, metadata["center"].split(","))
         elif self.bounds:
-            cx = (bounds[2] + bounds[0]) / 2.
-            cy = (bounds[3] + bounds[1]) / 2.
+            cx = (bounds[2] + bounds[0]) / 2.0
+            cy = (bounds[3] + bounds[1]) / 2.0
             cz = self.min_zoom
         self.default_lon = cx
         self.default_lat = cy
         self.default_zoom = int(cz)
         self.projection = metadata.get("projection", "")
-        self.is_xy = (self.projection == "xy")
+        self.is_xy = self.projection == "xy"
 
     def fill_tile(self, tile):
         if tile.state == "done":
@@ -63,9 +63,12 @@ class MBTilesMapSource(MapSource):
         # get the right tile
         c = ctx.db.cursor()
         c.execute(
-            ("SELECT tile_data FROM tiles WHERE "
-            "zoom_level=? AND tile_column=? AND tile_row=?"),
-            (tile.zoom, tile.tile_x, tile.tile_y))
+            (
+                "SELECT tile_data FROM tiles WHERE "
+                "zoom_level=? AND tile_column=? AND tile_row=?"
+            ),
+            (tile.zoom, tile.tile_x, tile.tile_y),
+        )
         # print "fetch", tile.zoom, tile.tile_x, tile.tile_y
         row = c.fetchone()
         if not row:
@@ -79,15 +82,17 @@ class MBTilesMapSource(MapSource):
             # android issue, "buffer" does not have the buffer interface
             # ie row[0] buffer is not compatible with BytesIO on Android??
             data = io.BytesIO(bytes(row[0]))
-        im = CoreImage(data, ext='png',
-                filename="{}.{}.{}.png".format(tile.zoom, tile.tile_x,
-                    tile.tile_y))
+        im = CoreImage(
+            data,
+            ext='png',
+            filename="{}.{}.{}.png".format(tile.zoom, tile.tile_x, tile.tile_y),
+        )
 
         if im is None:
             tile.state = "done"
             return
 
-        return self._load_tile_done, (tile, im, )
+        return self._load_tile_done, (tile, im,)
 
     def _load_tile_done(self, tile, im):
         tile.texture = im.texture

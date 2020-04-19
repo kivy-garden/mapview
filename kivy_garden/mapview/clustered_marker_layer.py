@@ -9,10 +9,16 @@ from math import sin, log, pi, atan, exp, floor, sqrt
 from kivy_garden.mapview.view import MapLayer, MapMarker
 from kivy.lang import Builder
 from kivy.metrics import dp
-from kivy.properties import (ObjectProperty, NumericProperty, StringProperty, ListProperty)
+from kivy.properties import (
+    ObjectProperty,
+    NumericProperty,
+    StringProperty,
+    ListProperty,
+)
 
 
-Builder.load_string("""
+Builder.load_string(
+    """
 <ClusterMapMarker>:
     size_hint: None, None
     source: root.source
@@ -25,12 +31,13 @@ Builder.load_string("""
         size: root.size
         text: "{}".format(root.num_points)
         font_size: dp(18)
-""")
+"""
+)
 
 
 # longitude/latitude to spherical mercator in [0..1] range
 def lngX(lng):
-    return lng / 360. + 0.5
+    return lng / 360.0 + 0.5
 
 
 def latY(lat):
@@ -38,8 +45,8 @@ def latY(lat):
         return 0
     if lat == -90:
         return 1
-    s = sin(lat * pi / 180.)
-    y = (0.5 - 0.25 * log((1 + s) / (1 - s)) / pi)
+    s = sin(lat * pi / 180.0)
+    y = 0.5 - 0.25 * log((1 + s) / (1 - s)) / pi
     return min(1, max(0, y))
 
 
@@ -71,8 +78,9 @@ class KDBush:
         self._sort(ids, coords, node_size, 0, len(ids) - 1, 0)
 
     def range(self, min_x, min_y, max_x, max_y):
-        return self._range(self.ids, self.coords, min_x, min_y, max_x, max_y,
-                           self.node_size)
+        return self._range(
+            self.ids, self.coords, min_x, min_y, max_x, max_y, self.node_size
+        )
 
     def within(self, x, y, r):
         return self._within(self.ids, self.coords, x, y, r, self.node_size)
@@ -80,7 +88,7 @@ class KDBush:
     def _sort(self, ids, coords, node_size, left, right, depth):
         if right - left <= node_size:
             return
-        m = int(floor((left + right) / 2.))
+        m = int(floor((left + right) / 2.0))
         self._select(ids, coords, m, left, right, depth % 2)
         self._sort(ids, coords, node_size, left, m - 1, depth + 1)
         self._sort(ids, coords, node_size, m + 1, right, depth + 1)
@@ -92,9 +100,8 @@ class KDBush:
                 n = float(right - left + 1)
                 m = k - left + 1
                 z = log(n)
-                s = 0.5 + exp(2 * z / 3.)
-                sd = 0.5 * sqrt(z * s * (n - s) / n) * (-1
-                                                        if (m - n / 2.) < 0 else 1)
+                s = 0.5 + exp(2 * z / 3.0)
+                sd = 0.5 * sqrt(z * s * (n - s) / n) * (-1 if (m - n / 2.0) < 0 else 1)
                 new_left = max(left, int(floor(k - m * s / n + sd)))
                 new_right = min(right, int(floor(k + (n - m) * s / n + sd)))
                 self._select(ids, coords, k, new_left, new_right, inc)
@@ -152,26 +159,25 @@ class KDBush:
                 for i in range(left, right + 1):
                     x = coords[2 * i]
                     y = coords[2 * i + 1]
-                    if (x >= min_x and x <= max_x and y >= min_y and
-                            y <= max_y):
+                    if x >= min_x and x <= max_x and y >= min_y and y <= max_y:
                         result.append(ids[i])
                 continue
 
-            m = int(floor((left + right) / 2.))
+            m = int(floor((left + right) / 2.0))
 
             x = coords[2 * m]
             y = coords[2 * m + 1]
 
-            if (x >= min_x and x <= max_x and y >= min_y and y <= max_y):
+            if x >= min_x and x <= max_x and y >= min_y and y <= max_y:
                 result.append(ids[m])
 
             nextAxis = (axis + 1) % 2
 
-            if (min_x <= x if axis == 0 else min_y <= y):
+            if min_x <= x if axis == 0 else min_y <= y:
                 stack.append(left)
                 stack.append(m - 1)
                 stack.append(nextAxis)
-            if (max_x >= x if axis == 0 else max_y >= y):
+            if max_x >= x if axis == 0 else max_y >= y:
                 stack.append(m + 1)
                 stack.append(right)
                 stack.append(nextAxis)
@@ -195,7 +201,7 @@ class KDBush:
                         result.append(ids[i])
                 continue
 
-            m = int(floor((left + right) / 2.))
+            m = int(floor((left + right) / 2.0))
 
             x = coords[2 * m]
             y = coords[2 * m + 1]
@@ -258,20 +264,16 @@ class Marker:
         self.widget = None
 
     def __repr__(self):
-        return "<Marker lon={} lat={} source={}>".format(self.lon, self.lat,
-                                                         self.source)
+        return "<Marker lon={} lat={} source={}>".format(
+            self.lon, self.lat, self.source
+        )
 
 
 class SuperCluster:
     """Port of supercluster from mapbox in pure python
     """
 
-    def __init__(self,
-                 min_zoom=0,
-                 max_zoom=16,
-                 radius=40,
-                 extent=512,
-                 node_size=64):
+    def __init__(self, min_zoom=0, max_zoom=16, radius=40, extent=512, node_size=64):
         super().__init__()
         self.min_zoom = min_zoom
         self.max_zoom = max_zoom
@@ -284,6 +286,7 @@ class SuperCluster:
         Once loaded, the index is immutable.
         """
         from time import time
+
         self.trees = {}
         self.points = points
 
@@ -365,7 +368,9 @@ class SuperCluster:
                 c_append(p)
             else:
                 p.parent_id = i
-                c_append(Cluster(wx / num_points, wy / num_points, num_points, i, props))
+                c_append(
+                    Cluster(wx / num_points, wy / num_points, num_points, i, props)
+                )
         return clusters
 
 
@@ -373,7 +378,7 @@ class ClusterMapMarker(MapMarker):
     source = StringProperty(join(dirname(__file__), "icons", "cluster.png"))
     cluster = ObjectProperty()
     num_points = NumericProperty()
-    text_color = ListProperty([.1, .1, .1, 1])
+    text_color = ListProperty([0.1, 0.1, 0.1, 1])
 
     def on_cluster(self, instance, cluster):
         self.num_points = cluster.num_points
@@ -427,7 +432,7 @@ class ClusteredMarkerLayer(MapLayer):
             max_zoom=self.cluster_max_zoom,
             radius=self.cluster_radius,
             extent=self.cluster_extent,
-            node_size=self.cluster_node_size
+            node_size=self.cluster_node_size,
         )
         self.cluster.load(self.cluster_markers)
 
