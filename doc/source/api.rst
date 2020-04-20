@@ -1,9 +1,9 @@
 
 ####################
-  The Flower API
+  The mapview API
 ####################
 
 .. toctree::
    :maxdepth: 1
 
-   flower.rst
+   mapview.rst

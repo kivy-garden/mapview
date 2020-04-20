@@ -3,8 +3,6 @@
 MapView
 =======
 
-.. author:: Mathieu Virbel <mat@kivy.org>
-
 MapView is a Kivy widget that display maps.
 """
 from kivy_garden.mapview.source import MapSource
