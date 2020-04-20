@@ -2,7 +2,7 @@ name: PyPI release
 on: [push]
 
 jobs:
-  pypi:
+  pypi_kivy_garden_mapview:
     runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@v1
@@ -16,10 +16,30 @@ jobs:
     - name: Build
       run: |
         python setup.py sdist bdist_wheel
+    - name: Publish package
+      if: github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags')
+      uses: pypa/gh-action-pypi-publish@v1.1.0
+      with:
+        user: __token__
+        password: ${{ secrets.pypi_password_kivy_garden_mapview }}
+
+  pypi_mapview:
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up Python 3.x
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.x
+    - name: Install dependencies
+      run: |
+        python -m pip install --user --upgrade setuptools wheel
+    - name: Build
+      run: |
         python setup_meta.py sdist bdist_wheel
     - name: Publish package
       if: github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags')
       uses: pypa/gh-action-pypi-publish@v1.1.0
       with:
         user: __token__
-        password: ${{ secrets.pypi_password }}
+        password: ${{ secrets.pypi_password_mapview }}

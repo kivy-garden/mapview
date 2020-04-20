@@ -1,7 +1,14 @@
 # Change Log
 
-## [Unreleased]
 
+## [1.0.4]
+
+  - Fix PyPI auto-deployment
+
+## [1.0.3]
+
+  - Genral code linting/cleaning
+  - Increase coverage testing from 14% to 35%
   - Fix `Downloader` now checks for HTTP status code, refs #6
 
 ## [1.0.2]
