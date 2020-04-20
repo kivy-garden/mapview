@@ -1,13 +1,10 @@
-from kivy.base import runTouchApp
 import sys
 
-if __name__ == '__main__' and __package__ is None:
-    from os import path
-    sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
+from kivy.base import runTouchApp
 
-from kivy_garden.mapview import MapView, MapMarker
+from kivy_garden.mapview import MapMarker, MapView
 from kivy_garden.mapview.geojson import GeoJsonMapLayer
-from kivy_garden.mapview.utils import haversine, get_zoom_for_radius
+from kivy_garden.mapview.utils import get_zoom_for_radius, haversine
 
 if len(sys.argv) > 1:
     source = sys.argv[1]

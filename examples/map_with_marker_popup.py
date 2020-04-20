@@ -1,13 +1,16 @@
 import sys
+
 from kivy.base import runTouchApp
 from kivy.lang import Builder
 
 if __name__ == '__main__' and __package__ is None:
     from os import path
+
     sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
 
 
-root = Builder.load_string("""
+root = Builder.load_string(
+    """
 #:import sys sys
 #:import MapSource kivy_garden.mapview.MapSource
 MapView:
@@ -33,6 +36,7 @@ MapView:
                     markup: True
                     halign: "center"
 
-""")
+"""
+)
 
 runTouchApp(root)

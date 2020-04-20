@@ -1,14 +1,11 @@
-from kivy.base import runTouchApp
 import sys
 
-if __name__ == '__main__' and __package__ is None:
-    from os import path
-    sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
+from kivy.base import runTouchApp
 
-from kivy_garden.mapview import MapView, MapMarker
-from kivy_garden.mapview.geojson import GeoJsonMapLayer
+from kivy_garden.mapview import MapMarker, MapView
 from kivy_garden.mapview.clustered_marker_layer import ClusteredMarkerLayer
-from kivy_garden.mapview.utils import haversine, get_zoom_for_radius
+from kivy_garden.mapview.geojson import GeoJsonMapLayer
+from kivy_garden.mapview.utils import get_zoom_for_radius, haversine
 
 source = sys.argv[1]
 
@@ -27,9 +24,7 @@ options["zoom"] = zoom
 view = MapView(**options)
 view.add_layer(layer)
 
-marker_layer = ClusteredMarkerLayer(
-    cluster_radius=200
-)
+marker_layer = ClusteredMarkerLayer(cluster_radius=200)
 view.add_layer(marker_layer)
 
 # create marker if they exists

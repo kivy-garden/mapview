@@ -1,4 +1,4 @@
-name: Garden flower
+name: Tests
 on: [push, pull_request]
 
 jobs:
@@ -55,7 +55,7 @@ jobs:
         draft: true
     - name: Test with pytest
       run: |
-        python3 -m pytest --cov=kivy_garden.mapview --cov-report term --cov-branch tests/
+        python3 -m pytest tests/
     - name: Coveralls
       # use this custom action until Coveralls fixes uptream issues
       # https://github.com/coverallsapp/github-action/issues/30
@@ -92,7 +92,7 @@ jobs:
       run: python -m pip install -e .[dev,ci] --extra-index-url https://kivy-garden.github.io/simple/
     - name: Test with pytest
       run: |
-        python -m pytest --cov=kivy_garden.mapview --cov-report term --cov-branch tests/
+        python -m pytest tests/
 
   docs:
     runs-on: ubuntu-18.04

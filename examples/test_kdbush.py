@@ -5,11 +5,13 @@ The green circle will indicate the selection zone, the blue rectangle indicate
 the selected red dot.
 """
 
-from kivy.app import App
-from kivy.uix.widget import Widget
-from kivy.graphics import Color, Rectangle, Ellipse, Canvas
-from kivy_garden.mapview.clustered_marker_layer import KDBush, Marker
 from random import random
+
+from kivy.app import App
+from kivy.graphics import Canvas, Color, Ellipse, Rectangle
+from kivy.uix.widget import Widget
+
+from kivy_garden.mapview.clustered_marker_layer import KDBush, Marker
 
 # creating markers
 points = []
@@ -36,8 +38,7 @@ class TestWidget(Widget):
             with self.canvas_points:
                 Color(1, 0, 0)
                 for marker in points:
-                    Rectangle(
-                        pos=(marker.x * 600, marker.y * 600), size=(2, 2))
+                    Rectangle(pos=(marker.x * 600, marker.y * 600), size=(2, 2))
 
         self.canvas.before.clear()
         with self.canvas.before:
@@ -66,7 +67,7 @@ class TestWidget(Widget):
 
     def select(self, x, y):
         self.selection_center = (x, y)
-        self.selection = kdbush.within(x / 600., y / 600., self.radius)
+        self.selection = kdbush.within(x / 600.0, y / 600.0, self.radius)
         self.build()
 
 

@@ -2,30 +2,35 @@
 
 __all__ = ["Downloader"]
 
-from kivy.clock import Clock
-from os.path import join, exists
-from os import makedirs, environ
-from concurrent.futures import ThreadPoolExecutor, TimeoutError, as_completed
-from random import choice
-import requests
+import logging
 import traceback
+from concurrent.futures import ThreadPoolExecutor, TimeoutError, as_completed
+from os import environ, makedirs
+from os.path import exists, join
+from random import choice
 from time import time
-from kivy_garden.mapview import CACHE_DIR
 
+import requests
+from kivy.clock import Clock
+from kivy.logger import LOG_LEVELS, Logger
 
-DEBUG = "MAPVIEW_DEBUG_DOWNLOADER" in environ
+from kivy_garden.mapview.constants import CACHE_DIR
+
+if "MAPVIEW_DEBUG_DOWNLOADER" in environ:
+    Logger.setLevel(LOG_LEVELS['debug'])
+
 # user agent is needed because since may 2019 OSM gives me a 429 or 403 server error
 # I tried it with a simpler one (just Mozilla/5.0) this also gets rejected
 USER_AGENT = 'Kivy-garden.mapview'
 
 
-class Downloader(object):
+class Downloader:
     _instance = None
     MAX_WORKERS = 5
     CAP_TIME = 0.064  # 15 FPS
 
     @staticmethod
-    def instance(cache_dir):
+    def instance(cache_dir=None):
         if Downloader._instance is None:
             if not cache_dir:
                 cache_dir = CACHE_DIR
@@ -38,12 +43,11 @@ class Downloader(object):
             max_workers = Downloader.MAX_WORKERS
         if cap_time is None:
             cap_time = Downloader.CAP_TIME
-        super(Downloader, self).__init__()
         self.is_paused = False
         self.cap_time = cap_time
         self.executor = ThreadPoolExecutor(max_workers=max_workers)
         self._futures = []
-        Clock.schedule_interval(self._check_executor, 1 / 60.)
+        Clock.schedule_interval(self._check_executor, 1 / 60.0)
         if not exists(self.cache_dir):
             makedirs(self.cache_dir)
 
@@ -52,47 +56,45 @@ class Downloader(object):
         self._futures.append(future)
 
     def download_tile(self, tile):
-        if DEBUG:
-            print("Downloader: queue(tile) zoom={} x={} y={}".format(
-                tile.zoom, tile.tile_x, tile.tile_y))
+        Logger.debug(
+            "Downloader: queue(tile) zoom={} x={} y={}".format(
+                tile.zoom, tile.tile_x, tile.tile_y
+            )
+        )
         future = self.executor.submit(self._load_tile, tile)
         self._futures.append(future)
 
     def download(self, url, callback, **kwargs):
-        if DEBUG:
-            print("Downloader: queue(url) {}".format(url))
-        future = self.executor.submit(
-            self._download_url, url, callback, kwargs)
+        Logger.debug("Downloader: queue(url) {}".format(url))
+        future = self.executor.submit(self._download_url, url, callback, kwargs)
         self._futures.append(future)
 
     def _download_url(self, url, callback, kwargs):
-        if DEBUG:
-            print("Downloader: download(url) {}".format(url))
-        r = requests.get(url, **kwargs)
-        return callback, (url, r, )
+        Logger.debug("Downloader: download(url) {}".format(url))
+        response = requests.get(url, **kwargs)
+        response.raise_for_status()
+        return callback, (url, response)
 
     def _load_tile(self, tile):
         if tile.state == "done":
             return
         cache_fn = tile.cache_fn
         if exists(cache_fn):
-            if DEBUG:
-                print("Downloader: use cache {}".format(cache_fn))
-            return tile.set_source, (cache_fn, )
+            Logger.debug("Downloader: use cache {}".format(cache_fn))
+            return tile.set_source, (cache_fn,)
         tile_y = tile.map_source.get_row_count(tile.zoom) - tile.tile_y - 1
-        uri = tile.map_source.url.format(z=tile.zoom, x=tile.tile_x, y=tile_y,
-                                         s=choice(tile.map_source.subdomains))
-        if DEBUG:
-            print("Downloader: download(tile) {}".format(uri))
-        req = requests.get(uri, headers={'User-agent': USER_AGENT}, timeout=5)
+        uri = tile.map_source.url.format(
+            z=tile.zoom, x=tile.tile_x, y=tile_y, s=choice(tile.map_source.subdomains)
+        )
+        Logger.debug("Downloader: download(tile) {}".format(uri))
+        response = requests.get(uri, headers={'User-agent': USER_AGENT}, timeout=5)
         try:
-            req.raise_for_status()
-            data = req.content
+            response.raise_for_status()
+            data = response.content
             with open(cache_fn, "wb") as fd:
                 fd.write(data)
-            if DEBUG:
-                print("Downloaded {} bytes: {}".format(len(data), uri))
-            return tile.set_source, (cache_fn, )
+            Logger.debug("Downloaded {} bytes: {}".format(len(data), uri))
+            return tile.set_source, (cache_fn,)
         except Exception as e:
             print("Downloader error: {!r}".format(e))
 

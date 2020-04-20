@@ -1,8 +1,12 @@
 # Change Log
 
+## [Unreleased]
+
+  - Fix `Downloader` now checks for HTTP status code, refs #6
+
 ## [1.0.2]
 
-  - Fix `AttributeError` on `GeoJsonMapLayer.canvas_line`
+  - Fix `AttributeError` on `GeoJsonMapLayer.canvas_line`, refs #12
 
 ## [1.0.1]
 

@@ -1,8 +1,9 @@
 # Mapview
 
-[![Github Build Status](https://github.com/kivy-garden/mapview/workflows/Garden%20flower/badge.svg)](https://github.com/kivy-garden/mapview/actions)
+[![Github Build Status](https://github.com/kivy-garden/mapview/workflows/Tests/badge.svg)](https://github.com/kivy-garden/mapview/actions?query=workflow%3ATests)
 [![Build Status](https://travis-ci.com/kivy-garden/mapview.svg?branch=develop)](https://travis-ci.com/kivy-garden/mapview)
 [![Coverage Status](https://coveralls.io/repos/github/kivy-garden/mapview/badge.svg?branch=develop)](https://coveralls.io/github/kivy-garden/mapview?branch=develop)
+[![PyPI version](https://badge.fury.io/py/mapview.svg)](https://badge.fury.io/py/mapview)
 
 Mapview is a Kivy widget for displaying interactive maps. It has been
 designed with lot of inspirations of
@@ -31,13 +32,7 @@ the latests state-of-the-art Kivy's methods.
 
 # Requirements
 
-It requires the `concurrent.futures` and `requests`. If you are on python 2.7,
-you can use `futures`:
-
-```
-pip install futures requests
-```
-
+It requires the `concurrent.futures` and `requests`.
 If you use it on Android / iOS, don't forget to add `openssl` as a requirements,
 otherwise you'll have an issue when importing `urllib3` from `requests`.
 
@@ -64,7 +59,9 @@ class MapViewApp(App):
 MapViewApp().run()
 ```
 
-More extensive documentation will come soon.
+Find out more:
+- [examples/](https://github.com/kivy-garden/mapview/tree/master/examples)
+- <https://mapview.readthedocs.io/en/latest/>
 
 
 Contributing

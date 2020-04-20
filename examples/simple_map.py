@@ -1,11 +1,8 @@
 import sys
+
 from kivy.base import runTouchApp
 
-if __name__ == '__main__' and __package__ is None:
-    from os import path
-    sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
-
-from kivy_garden.mapview import MapView, MapSource
+from kivy_garden.mapview import MapSource, MapView
 
 kwargs = {}
 if len(sys.argv) > 1:
