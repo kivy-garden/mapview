@@ -1,9 +1,9 @@
 # Change Log
 
 
-## [Unreleased]
+## [1.0.4]
 
-  - PyPI auto-deployment
+  - Fix PyPI auto-deployment
 
 ## [1.0.3]
 
