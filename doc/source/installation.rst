@@ -13,6 +13,8 @@ Dependencies
 ------------
 
 #. `Kivy <https://kivy.org/#download>`_
+#. `concurrent.futures <https://docs.python.org/3.4/library/concurrent.futures.html>`_
+#. `requests <https://pypi.python.org/pypi/requests>`_
 
 
 Installation
