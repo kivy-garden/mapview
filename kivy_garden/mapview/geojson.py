@@ -192,8 +192,8 @@ COLORS = {
 }
 
 
-def flatten(l):
-    return [item for sublist in l for item in sublist]
+def flatten(lst):
+    return [item for sublist in lst for item in sublist]
 
 
 class GeoJsonMapLayer(MapLayer):

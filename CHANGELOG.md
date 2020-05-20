@@ -1,6 +1,10 @@
 # Change Log
 
 
+## [1.0.5]
+
+  - API documentation migration
+
 ## [1.0.4]
 
   - Fix PyPI auto-deployment
