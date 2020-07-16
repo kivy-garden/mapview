@@ -47,7 +47,8 @@ setup_params = dict(
         'ci': ['coveralls', 'pycodestyle'],
     },
     package_data={},
-    data_files=[],
+    data_files=[('icons', ['kivy_garden/mapview/icons/cluster.png',
+                           'kivy_garden/mapview/icons/marker.png'])],
     entry_points={},
     project_urls={
         'Bug Reports': URL + '/issues',
