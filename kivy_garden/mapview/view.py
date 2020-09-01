@@ -642,7 +642,7 @@ class MapView(Widget):
         )
 
     def on_touch_down(self, touch):
-        if not self.collide_point(*touch.pos):
+        if not self.collide_point(*touch.pos) or self.disabled:
             return
         if self.pause_on_action:
             self._pause = True
