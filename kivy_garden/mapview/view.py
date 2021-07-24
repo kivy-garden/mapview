@@ -152,6 +152,10 @@ class MapMarker(ButtonBehavior, Image):
     # (internal) reference to its layer
     _layer = None
 
+    def __init__(self, **kwargs):
+        super(MapMarker, self).__init__(**kwargs)
+        self.texture_update()
+
     def detach(self):
         if self._layer:
             self._layer.remove_widget(self)
