@@ -646,12 +646,12 @@ class MapView(Widget):
         )
 
     def on_touch_down(self, touch):
-        if not self.collide_point(*touch.pos):
+        if not self.collide_point(*touch.pos) or self.disabled:
             return
         if self.pause_on_action:
             self._pause = True
         if "button" in touch.profile and touch.button in ("scrolldown", "scrollup"):
-            d = 1 if touch.button == "scrollup" else -1
+            d = 1 if touch.button == "scrolldown" else -1
             self.animated_diff_scale_at(d, *touch.pos)
             return True
         elif touch.is_double_tap and self.double_tap_zoom:
