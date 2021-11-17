@@ -348,7 +348,7 @@ class MapView(Widget):
     def scale(self):
         if self._invalid_scale:
             self._invalid_scale = False
-            self._scale = self._scatter.scale
+            self._scale = round(self._scatter.scale, 2)
         return self._scale
 
     def get_bbox(self, margin=0):
@@ -690,10 +690,10 @@ class MapView(Widget):
         zoom = self._zoom
         scatter = self._scatter
         scale = scatter.scale
-        if scale >= 2.0:
+        if round(scale, 2) >= 2.0:
             zoom += 1
             scale /= 2.0
-        elif scale < 1:
+        elif round(scale, 2) < 1.0:
             zoom -= 1
             scale *= 2.0
         zoom = clamp(zoom, map_source.min_zoom, map_source.max_zoom)
