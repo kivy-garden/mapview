@@ -348,7 +348,7 @@ class MapView(Widget):
     def scale(self):
         if self._invalid_scale:
             self._invalid_scale = False
-            self._scale = round(self._scatter.scale, 2)
+            self._scale = self._scatter.scale
         return self._scale
 
     def get_bbox(self, margin=0):
