@@ -1,0 +1,1888 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mapview &mdash; Flower  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="The mapview API" href="api.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Flower
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="api.html">The mapview API</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Mapview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-kivy_garden.mapview"><code class="xref py py-mod docutils literal notranslate"><span class="pre">kivy_garden.mapview</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">MapView</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Flower</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="api.html">The mapview API</a> &raquo;</li>
+      <li>Mapview</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/mapview.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="mapview">
+<span id="mapview-api"></span><h1>Mapview<a class="headerlink" href="#mapview" title="Permalink to this headline"></a></h1>
+<section id="module-kivy_garden.mapview">
+<span id="kivy-garden-mapview"></span><h2><a class="reference internal" href="#module-kivy_garden.mapview" title="kivy_garden.mapview"><code class="xref py py-mod docutils literal notranslate"><span class="pre">kivy_garden.mapview</span></code></a><a class="headerlink" href="#module-kivy_garden.mapview" title="Permalink to this headline"></a></h2>
+<section id="id1">
+<h3>MapView<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h3>
+<p>MapView is a Kivy widget that display maps.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="kivy_garden.mapview.Bbox">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kivy_garden.mapview.</span></span><span class="sig-name descname"><span class="pre">Bbox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.Bbox" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.Bbox.collide">
+<span class="sig-name descname"><span class="pre">collide</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.Bbox.collide" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kivy_garden.mapview.Coordinate">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kivy_garden.mapview.</span></span><span class="sig-name descname"><span class="pre">Coordinate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lon</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.Coordinate" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kivy_garden.mapview.Coordinate.lat">
+<span class="sig-name descname"><span class="pre">lat</span></span><a class="headerlink" href="#kivy_garden.mapview.Coordinate.lat" title="Permalink to this definition"></a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kivy_garden.mapview.Coordinate.lon">
+<span class="sig-name descname"><span class="pre">lon</span></span><a class="headerlink" href="#kivy_garden.mapview.Coordinate.lon" title="Permalink to this definition"></a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapLayer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kivy_garden.mapview.</span></span><span class="sig-name descname"><span class="pre">MapLayer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapLayer" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://kivy.org/doc/stable/api-kivy.uix.widget.html#kivy.uix.widget.Widget" title="(in Kivy v2.1.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">kivy.uix.widget.Widget</span></code></a></p>
+<p>A map layer, that is repositionned everytime the <a class="reference internal" href="#kivy_garden.mapview.MapView" title="kivy_garden.mapview.MapView"><code class="xref py py-class docutils literal notranslate"><span class="pre">MapView</span></code></a> is
+moved.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapLayer.reposition">
+<span class="sig-name descname"><span class="pre">reposition</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapLayer.reposition" title="Permalink to this definition"></a></dt>
+<dd><p>Function called when <a class="reference internal" href="#kivy_garden.mapview.MapView" title="kivy_garden.mapview.MapView"><code class="xref py py-class docutils literal notranslate"><span class="pre">MapView</span></code></a> is moved. You must recalculate
+the position of your children.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapLayer.unload">
+<span class="sig-name descname"><span class="pre">unload</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapLayer.unload" title="Permalink to this definition"></a></dt>
+<dd><p>Called when the view want to completly unload the layer.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapLayer.viewport_x">
+<span class="sig-name descname"><span class="pre">viewport_x</span></span><a class="headerlink" href="#kivy_garden.mapview.MapLayer.viewport_x" title="Permalink to this definition"></a></dt>
+<dd><p>NumericProperty(defaultvalue=0, <a href="#id2"><span class="problematic" id="id3">**</span></a>kw)
+Property that represents a numeric value.</p>
+<blockquote>
+<div><p>It only accepts the int or float numeric data type or a string that can be
+converted to a number as shown below. For other numeric types use ObjectProperty
+or use errorhandler to convert it to an int/float.</p>
+<p>It does not support numpy numbers so they must be manually converted to int/float.
+E.g. <code class="docutils literal notranslate"><span class="pre">widget.num</span> <span class="pre">=</span> <span class="pre">np.arange(4)[0]</span></code> will raise an exception. Numpy arrays are not
+supported at all, even by ObjectProperty because their comparision does not return
+a bool. But if you must use a Kivy property, use a ObjectProperty with <code class="docutils literal notranslate"><span class="pre">comparator</span></code>
+set to <code class="docutils literal notranslate"><span class="pre">np.array_equal</span></code>. E.g.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="n">EventDispatcher</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">data</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="n">comparator</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array_equal</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="nb">print</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">&lt;__main__.A object at 0x000001C839B50208&gt; [0 1]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">&lt;__main__.A object at 0x000001C839B50208&gt; [0 1 2]</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><cite>defaultvalue</cite>: int or float, defaults to 0</dt><dd><p>Specifies the default value of the property.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">wid</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">wid</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">wid</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+<span class="go">42</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">wid</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;plop&quot;</span>
+<span class="go"> Traceback (most recent call last):</span>
+<span class="go">   File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</span>
+<span class="go">   File &quot;properties.pyx&quot;, line 93, in kivy.properties.Property.__set__</span>
+<span class="go">   File &quot;properties.pyx&quot;, line 111, in kivy.properties.Property.set</span>
+<span class="go">   File &quot;properties.pyx&quot;, line 159, in kivy.properties.NumericProperty.check</span>
+<span class="go"> ValueError: NumericProperty accept only int/float</span>
+</pre></div>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.4.1: </span>NumericProperty can now accept custom text and tuple value to indicate a
+type, like “in”, “pt”, “px”, “cm”, “mm”, in the format: ‘10pt’ or (10,
+‘pt’).</p>
+</div>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapLayer.viewport_y">
+<span class="sig-name descname"><span class="pre">viewport_y</span></span><a class="headerlink" href="#kivy_garden.mapview.MapLayer.viewport_y" title="Permalink to this definition"></a></dt>
+<dd><p>NumericProperty(defaultvalue=0, <a href="#id4"><span class="problematic" id="id5">**</span></a>kw)
+Property that represents a numeric value.</p>
+<blockquote>
+<div><p>It only accepts the int or float numeric data type or a string that can be
+converted to a number as shown below. For other numeric types use ObjectProperty
+or use errorhandler to convert it to an int/float.</p>
+<p>It does not support numpy numbers so they must be manually converted to int/float.
+E.g. <code class="docutils literal notranslate"><span class="pre">widget.num</span> <span class="pre">=</span> <span class="pre">np.arange(4)[0]</span></code> will raise an exception. Numpy arrays are not
+supported at all, even by ObjectProperty because their comparision does not return
+a bool. But if you must use a Kivy property, use a ObjectProperty with <code class="docutils literal notranslate"><span class="pre">comparator</span></code>
+set to <code class="docutils literal notranslate"><span class="pre">np.array_equal</span></code>. E.g.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="n">EventDispatcher</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">data</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="n">comparator</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array_equal</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="nb">print</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">&lt;__main__.A object at 0x000001C839B50208&gt; [0 1]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">&lt;__main__.A object at 0x000001C839B50208&gt; [0 1 2]</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><cite>defaultvalue</cite>: int or float, defaults to 0</dt><dd><p>Specifies the default value of the property.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">wid</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">wid</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">wid</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+<span class="go">42</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">wid</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;plop&quot;</span>
+<span class="go"> Traceback (most recent call last):</span>
+<span class="go">   File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</span>
+<span class="go">   File &quot;properties.pyx&quot;, line 93, in kivy.properties.Property.__set__</span>
+<span class="go">   File &quot;properties.pyx&quot;, line 111, in kivy.properties.Property.set</span>
+<span class="go">   File &quot;properties.pyx&quot;, line 159, in kivy.properties.NumericProperty.check</span>
+<span class="go"> ValueError: NumericProperty accept only int/float</span>
+</pre></div>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.4.1: </span>NumericProperty can now accept custom text and tuple value to indicate a
+type, like “in”, “pt”, “px”, “cm”, “mm”, in the format: ‘10pt’ or (10,
+‘pt’).</p>
+</div>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapMarker">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kivy_garden.mapview.</span></span><span class="sig-name descname"><span class="pre">MapMarker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapMarker" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://kivy.org/doc/stable/api-kivy.uix.behaviors.button.html#kivy.uix.behaviors.button.ButtonBehavior" title="(in Kivy v2.1.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">kivy.uix.behaviors.button.ButtonBehavior</span></code></a>, <a class="reference external" href="https://kivy.org/doc/stable/api-kivy.uix.image.html#kivy.uix.image.Image" title="(in Kivy v2.1.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">kivy.uix.image.Image</span></code></a></p>
+<p>A marker on a map, that must be used on a <a class="reference internal" href="#kivy_garden.mapview.MapMarker" title="kivy_garden.mapview.MapMarker"><code class="xref py py-class docutils literal notranslate"><span class="pre">MapMarker</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapMarker.anchor_x">
+<span class="sig-name descname"><span class="pre">anchor_x</span></span><a class="headerlink" href="#kivy_garden.mapview.MapMarker.anchor_x" title="Permalink to this definition"></a></dt>
+<dd><p>Anchor of the marker on the X axis. Defaults to 0.5, mean the anchor will
+be at the X center of the image.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapMarker.anchor_y">
+<span class="sig-name descname"><span class="pre">anchor_y</span></span><a class="headerlink" href="#kivy_garden.mapview.MapMarker.anchor_y" title="Permalink to this definition"></a></dt>
+<dd><p>Anchor of the marker on the Y axis. Defaults to 0, mean the anchor will
+be at the Y bottom of the image.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapMarker.detach">
+<span class="sig-name descname"><span class="pre">detach</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapMarker.detach" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapMarker.lat">
+<span class="sig-name descname"><span class="pre">lat</span></span><a class="headerlink" href="#kivy_garden.mapview.MapMarker.lat" title="Permalink to this definition"></a></dt>
+<dd><p>Latitude of the marker</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapMarker.lon">
+<span class="sig-name descname"><span class="pre">lon</span></span><a class="headerlink" href="#kivy_garden.mapview.MapMarker.lon" title="Permalink to this definition"></a></dt>
+<dd><p>Longitude of the marker</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapMarker.source">
+<span class="sig-name descname"><span class="pre">source</span></span><a class="headerlink" href="#kivy_garden.mapview.MapMarker.source" title="Permalink to this definition"></a></dt>
+<dd><p>Source of the marker, defaults to our own marker.png</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapMarkerPopup">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kivy_garden.mapview.</span></span><span class="sig-name descname"><span class="pre">MapMarkerPopup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapMarkerPopup" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kivy_garden.mapview.MapMarker" title="kivy_garden.mapview.view.MapMarker"><code class="xref py py-class docutils literal notranslate"><span class="pre">kivy_garden.mapview.view.MapMarker</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapMarkerPopup.add_widget">
+<span class="sig-name descname"><span class="pre">add_widget</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">widget</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapMarkerPopup.add_widget" title="Permalink to this definition"></a></dt>
+<dd><p>Add a new widget as a child of this widget.</p>
+<blockquote>
+<div><dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><cite>widget</cite>: <code class="xref py py-class docutils literal notranslate"><span class="pre">Widget</span></code></dt><dd><p>Widget to add to our list of children.</p>
+</dd>
+<dt><cite>index</cite>: int, defaults to 0</dt><dd><p>Index to insert the widget in the list. Notice that the default
+of 0 means the widget is inserted at the beginning of the list
+and will thus be drawn on top of other sibling widgets. For a
+full discussion of the index and widget hierarchy, please see
+the <a class="reference external" href="https://kivy.org/doc/stable/guide/widgets.html" title="(in Kivy v2.1.0)"><span class="xref std std-doc">Widgets Programming Guide</span></a>.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.0.5.</span></p>
+</div>
+</dd>
+<dt><cite>canvas</cite>: str, defaults to None</dt><dd><p>Canvas to add widget’s canvas to. Can be ‘before’, ‘after’ or
+None for the default canvas.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.9.0.</span></p>
+</div>
+</dd>
+</dl>
+</dd>
+</dl>
+</div></blockquote>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">kivy.uix.button</span> <span class="kn">import</span> <span class="n">Button</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">kivy.uix.slider</span> <span class="kn">import</span> <span class="n">Slider</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">root</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">root</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">Button</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">slider</span> <span class="o">=</span> <span class="n">Slider</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">root</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">slider</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapMarkerPopup.is_open">
+<span class="sig-name descname"><span class="pre">is_open</span></span><a class="headerlink" href="#kivy_garden.mapview.MapMarkerPopup.is_open" title="Permalink to this definition"></a></dt>
+<dd><p>BooleanProperty(defaultvalue=True, <a href="#id6"><span class="problematic" id="id7">**</span></a>kw)
+Property that represents only a boolean value.</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><cite>defaultvalue</cite>: boolean</dt><dd><p>Specifies the default value of the property.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapMarkerPopup.on_is_open">
+<span class="sig-name descname"><span class="pre">on_is_open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapMarkerPopup.on_is_open" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapMarkerPopup.on_release">
+<span class="sig-name descname"><span class="pre">on_release</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapMarkerPopup.on_release" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapMarkerPopup.placeholder">
+<span class="sig-name descname"><span class="pre">placeholder</span></span><a class="headerlink" href="#kivy_garden.mapview.MapMarkerPopup.placeholder" title="Permalink to this definition"></a></dt>
+<dd><p>ObjectProperty(defaultvalue=None, rebind=False, <a href="#id8"><span class="problematic" id="id9">**</span></a>kw)
+Property that represents a Python object.</p>
+<blockquote>
+<div><dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><cite>defaultvalue</cite>: object type</dt><dd><p>Specifies the default value of the property.</p>
+</dd>
+<dt><cite>rebind</cite>: bool, defaults to False</dt><dd><p>Whether kv rules using this object as an intermediate attribute
+in a kv rule, will update the bound property when this object
+changes.</p>
+<p>That is the standard behavior is that if there’s a kv rule
+<code class="docutils literal notranslate"><span class="pre">text:</span> <span class="pre">self.a.b.c.d</span></code>, where <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code>, and <code class="docutils literal notranslate"><span class="pre">c</span></code> are
+properties with <code class="docutils literal notranslate"><span class="pre">rebind</span></code> <code class="docutils literal notranslate"><span class="pre">False</span></code> and <code class="docutils literal notranslate"><span class="pre">d</span></code> is a
+<code class="xref py py-class docutils literal notranslate"><span class="pre">StringProperty</span></code>. Then when the rule is applied, <code class="docutils literal notranslate"><span class="pre">text</span></code>
+becomes bound only to <code class="docutils literal notranslate"><span class="pre">d</span></code>. If <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code>, or <code class="docutils literal notranslate"><span class="pre">c</span></code> change,
+<code class="docutils literal notranslate"><span class="pre">text</span></code> still remains bound to <code class="docutils literal notranslate"><span class="pre">d</span></code>. Furthermore, if any of them
+were <code class="docutils literal notranslate"><span class="pre">None</span></code> when the rule was initially evaluated, e.g. <code class="docutils literal notranslate"><span class="pre">b</span></code> was
+<code class="docutils literal notranslate"><span class="pre">None</span></code>; then <code class="docutils literal notranslate"><span class="pre">text</span></code> is bound to <code class="docutils literal notranslate"><span class="pre">b</span></code> and will not become bound
+to <code class="docutils literal notranslate"><span class="pre">d</span></code> even when <code class="docutils literal notranslate"><span class="pre">b</span></code> is changed to not be <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<p>By setting <code class="docutils literal notranslate"><span class="pre">rebind</span></code> to <code class="docutils literal notranslate"><span class="pre">True</span></code>, however, the rule will be
+re-evaluated and all the properties rebound when that intermediate
+property changes. E.g. in the example above, whenever <code class="docutils literal notranslate"><span class="pre">b</span></code> changes
+or becomes not <code class="docutils literal notranslate"><span class="pre">None</span></code> if it was <code class="docutils literal notranslate"><span class="pre">None</span></code> before, <code class="docutils literal notranslate"><span class="pre">text</span></code> is
+evaluated again and becomes rebound to <code class="docutils literal notranslate"><span class="pre">d</span></code>. The overall result is
+that <code class="docutils literal notranslate"><span class="pre">text</span></code> is now bound to all the properties among <code class="docutils literal notranslate"><span class="pre">a</span></code>,
+<code class="docutils literal notranslate"><span class="pre">b</span></code>, or <code class="docutils literal notranslate"><span class="pre">c</span></code> that have <code class="docutils literal notranslate"><span class="pre">rebind</span></code> set to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+</dd>
+<dt><cite>**kwargs</cite>: a list of keyword arguments</dt><dd><dl class="simple">
+<dt><cite>baseclass</cite></dt><dd><p>If kwargs includes a <cite>baseclass</cite> argument, this value will be
+used for validation: <cite>isinstance(value, kwargs[‘baseclass’])</cite>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>To mark the property as changed, you must reassign a new python object.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.9.0: </span><cite>rebind</cite> has been introduced.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.7.0: </span><cite>baseclass</cite> parameter added.</p>
+</div>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapMarkerPopup.popup_size">
+<span class="sig-name descname"><span class="pre">popup_size</span></span><a class="headerlink" href="#kivy_garden.mapview.MapMarkerPopup.popup_size" title="Permalink to this definition"></a></dt>
+<dd><p>ListProperty(defaultvalue=0, <a href="#id10"><span class="problematic" id="id11">**</span></a>kw)
+Property that represents a list.</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><cite>defaultvalue</cite>: list, defaults to []</dt><dd><p>Specifies the default value of the property.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When assigning a list to a <code class="xref py py-class docutils literal notranslate"><span class="pre">ListProperty</span></code>, the list stored in
+the property is a shallow copy of the list and not the original list. This can
+be demonstrated with the following example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">MyWidget</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">my_list</span> <span class="o">=</span> <span class="n">ListProperty</span><span class="p">([])</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">widget</span> <span class="o">=</span> <span class="n">MyWidget</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;hi&#39;</span><span class="p">:</span> <span class="s1">&#39;hello&#39;</span><span class="p">}]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">widget</span><span class="o">.</span><span class="n">my_list</span> <span class="o">=</span> <span class="n">my_list</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">my_list</span> <span class="ow">is</span> <span class="n">widget</span><span class="o">.</span><span class="n">my_list</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">my_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">,</span> <span class="n">widget</span><span class="o">.</span><span class="n">my_list</span><span class="p">)</span>
+<span class="go">[1, 5, {&#39;hi&#39;: &#39;hello&#39;}, 10] [1, 5, {&#39;hi&#39;: &#39;hello&#39;}]</span>
+</pre></div>
+</div>
+<p>However, changes to nested levels will affect the property as well,
+since the property uses a shallow copy of my_list.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_list</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="s1">&#39;hi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;bye&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">,</span> <span class="n">widget</span><span class="o">.</span><span class="n">my_list</span><span class="p">)</span>
+<span class="go">[1, 5, {&#39;hi&#39;: &#39;bye&#39;}, 10] [1, 5, {&#39;hi&#39;: &#39;bye&#39;}]</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapMarkerPopup.refresh_open_status">
+<span class="sig-name descname"><span class="pre">refresh_open_status</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapMarkerPopup.refresh_open_status" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapMarkerPopup.remove_widget">
+<span class="sig-name descname"><span class="pre">remove_widget</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">widget</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapMarkerPopup.remove_widget" title="Permalink to this definition"></a></dt>
+<dd><p>Remove a widget from the children of this widget.</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><cite>widget</cite>: <code class="xref py py-class docutils literal notranslate"><span class="pre">Widget</span></code></dt><dd><p>Widget to remove from our children list.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div></blockquote>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">kivy.uix.button</span> <span class="kn">import</span> <span class="n">Button</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">root</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">root</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">button</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">root</span><span class="o">.</span><span class="n">remove_widget</span><span class="p">(</span><span class="n">button</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapSource">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kivy_garden.mapview.</span></span><span class="sig-name descname"><span class="pre">MapSource</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_zoom</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_zoom</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">19</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tile_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">256</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_ext</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'png'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attribution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'©</span> <span class="pre">OpenStreetMap</span> <span class="pre">contributors'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subdomains</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'abc'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapSource" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Base class for implementing a map source / provider</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapSource.attribution_osm">
+<span class="sig-name descname"><span class="pre">attribution_osm</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Maps</span> <span class="pre">&amp;</span> <span class="pre">Data</span> <span class="pre">©</span> <span class="pre">[i][ref=http://www.osm.org/copyright]OpenStreetMap</span> <span class="pre">contributors[/ref][/i]'</span></em><a class="headerlink" href="#kivy_garden.mapview.MapSource.attribution_osm" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapSource.attribution_thunderforest">
+<span class="sig-name descname"><span class="pre">attribution_thunderforest</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Maps</span> <span class="pre">©</span> <span class="pre">[i][ref=http://www.thunderforest.com]Thunderforest[/ref][/i],</span> <span class="pre">Data</span> <span class="pre">©</span> <span class="pre">[i][ref=http://www.osm.org/copyright]OpenStreetMap</span> <span class="pre">contributors[/ref][/i]'</span></em><a class="headerlink" href="#kivy_garden.mapview.MapSource.attribution_thunderforest" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapSource.fill_tile">
+<span class="sig-name descname"><span class="pre">fill_tile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapSource.fill_tile" title="Permalink to this definition"></a></dt>
+<dd><p>Add this tile to load within the downloader</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapSource.from_provider">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_provider</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapSource.from_provider" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapSource.get_col_count">
+<span class="sig-name descname"><span class="pre">get_col_count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zoom</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapSource.get_col_count" title="Permalink to this definition"></a></dt>
+<dd><p>Get the number of tiles in a col at this zoom level</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapSource.get_lat">
+<span class="sig-name descname"><span class="pre">get_lat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zoom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapSource.get_lat" title="Permalink to this definition"></a></dt>
+<dd><p>Get the latitude to the y position in the map source’s projection</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapSource.get_lon">
+<span class="sig-name descname"><span class="pre">get_lon</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zoom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapSource.get_lon" title="Permalink to this definition"></a></dt>
+<dd><p>Get the longitude to the x position in the map source’s projection</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapSource.get_max_zoom">
+<span class="sig-name descname"><span class="pre">get_max_zoom</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapSource.get_max_zoom" title="Permalink to this definition"></a></dt>
+<dd><p>Return the maximum zoom of this source</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapSource.get_min_zoom">
+<span class="sig-name descname"><span class="pre">get_min_zoom</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapSource.get_min_zoom" title="Permalink to this definition"></a></dt>
+<dd><p>Return the minimum zoom of this source</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapSource.get_row_count">
+<span class="sig-name descname"><span class="pre">get_row_count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zoom</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapSource.get_row_count" title="Permalink to this definition"></a></dt>
+<dd><p>Get the number of tiles in a row at this zoom level</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapSource.get_x">
+<span class="sig-name descname"><span class="pre">get_x</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zoom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lon</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapSource.get_x" title="Permalink to this definition"></a></dt>
+<dd><p>Get the x position on the map using this map source’s projection
+(0, 0) is located at the top left.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapSource.get_y">
+<span class="sig-name descname"><span class="pre">get_y</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zoom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapSource.get_y" title="Permalink to this definition"></a></dt>
+<dd><p>Get the y position on the map using this map source’s projection
+(0, 0) is located at the top left.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapSource.providers">
+<span class="sig-name descname"><span class="pre">providers</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'cyclemap':</span> <span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">17,</span> <span class="pre">'http://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png',</span> <span class="pre">'Tiles</span> <span class="pre">&#64;</span> <span class="pre">Andy</span> <span class="pre">Allan'),</span> <span class="pre">'osm':</span> <span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">19,</span> <span class="pre">'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',</span> <span class="pre">'Maps</span> <span class="pre">&amp;</span> <span class="pre">Data</span> <span class="pre">©</span> <span class="pre">[i][ref=http://www.osm.org/copyright]OpenStreetMap</span> <span class="pre">contributors[/ref][/i]'),</span> <span class="pre">'osm-de':</span> <span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">18,</span> <span class="pre">'http://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png',</span> <span class="pre">'Tiles</span> <span class="pre">&#64;</span> <span class="pre">OSM</span> <span class="pre">DE'),</span> <span class="pre">'osm-fr':</span> <span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">20,</span> <span class="pre">'http://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png',</span> <span class="pre">'Tiles</span> <span class="pre">&#64;</span> <span class="pre">OSM</span> <span class="pre">France'),</span> <span class="pre">'osm-hot':</span> <span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">19,</span> <span class="pre">'http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',</span> <span class="pre">''),</span> <span class="pre">'thunderforest-cycle':</span> <span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">19,</span> <span class="pre">'http://{s}.tile.thunderforest.com/cycle/{z}/{x}/{y}.png',</span> <span class="pre">'Maps</span> <span class="pre">©</span> <span class="pre">[i][ref=http://www.thunderforest.com]Thunderforest[/ref][/i],</span> <span class="pre">Data</span> <span class="pre">©</span> <span class="pre">[i][ref=http://www.osm.org/copyright]OpenStreetMap</span> <span class="pre">contributors[/ref][/i]'),</span> <span class="pre">'thunderforest-landscape':</span> <span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">19,</span> <span class="pre">'http://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png',</span> <span class="pre">'Maps</span> <span class="pre">©</span> <span class="pre">[i][ref=http://www.thunderforest.com]Thunderforest[/ref][/i],</span> <span class="pre">Data</span> <span class="pre">©</span> <span class="pre">[i][ref=http://www.osm.org/copyright]OpenStreetMap</span> <span class="pre">contributors[/ref][/i]'),</span> <span class="pre">'thunderforest-outdoors':</span> <span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">19,</span> <span class="pre">'http://{s}.tile.thunderforest.com/outdoors/{z}/{x}/{y}.png',</span> <span class="pre">'Maps</span> <span class="pre">©</span> <span class="pre">[i][ref=http://www.thunderforest.com]Thunderforest[/ref][/i],</span> <span class="pre">Data</span> <span class="pre">©</span> <span class="pre">[i][ref=http://www.osm.org/copyright]OpenStreetMap</span> <span class="pre">contributors[/ref][/i]'),</span> <span class="pre">'thunderforest-transport':</span> <span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">19,</span> <span class="pre">'http://{s}.tile.thunderforest.com/transport/{z}/{x}/{y}.png',</span> <span class="pre">'Maps</span> <span class="pre">©</span> <span class="pre">[i][ref=http://www.thunderforest.com]Thunderforest[/ref][/i],</span> <span class="pre">Data</span> <span class="pre">©</span> <span class="pre">[i][ref=http://www.osm.org/copyright]OpenStreetMap</span> <span class="pre">contributors[/ref][/i]')}</span></em><a class="headerlink" href="#kivy_garden.mapview.MapSource.providers" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kivy_garden.mapview.</span></span><span class="sig-name descname"><span class="pre">MapView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapView" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://kivy.org/doc/stable/api-kivy.uix.widget.html#kivy.uix.widget.Widget" title="(in Kivy v2.1.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">kivy.uix.widget.Widget</span></code></a></p>
+<p>MapView is the widget that control the map displaying, navigation, and
+layers management.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapView.add_layer">
+<span class="sig-name descname"><span class="pre">add_layer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'window'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapView.add_layer" title="Permalink to this definition"></a></dt>
+<dd><p>Add a new layer to update at the same time the base tile layer.
+mode can be either “scatter” or “window”. If “scatter”, it means the
+layer will be within the scatter transformation. It’s perfect if you
+want to display path / shape, but not for text.
+If “window”, it will have no transformation. You need to position the
+widget yourself: think as Z-sprite / billboard.
+Defaults to “window”.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapView.add_marker">
+<span class="sig-name descname"><span class="pre">add_marker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">marker</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapView.add_marker" title="Permalink to this definition"></a></dt>
+<dd><p>Add a marker into the layer. If layer is None, it will be added in
+the default marker layer. If there is no default marker layer, a new
+one will be automatically created</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapView.add_widget">
+<span class="sig-name descname"><span class="pre">add_widget</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">widget</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapView.add_widget" title="Permalink to this definition"></a></dt>
+<dd><p>Add a new widget as a child of this widget.</p>
+<blockquote>
+<div><dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><cite>widget</cite>: <code class="xref py py-class docutils literal notranslate"><span class="pre">Widget</span></code></dt><dd><p>Widget to add to our list of children.</p>
+</dd>
+<dt><cite>index</cite>: int, defaults to 0</dt><dd><p>Index to insert the widget in the list. Notice that the default
+of 0 means the widget is inserted at the beginning of the list
+and will thus be drawn on top of other sibling widgets. For a
+full discussion of the index and widget hierarchy, please see
+the <a class="reference external" href="https://kivy.org/doc/stable/guide/widgets.html" title="(in Kivy v2.1.0)"><span class="xref std std-doc">Widgets Programming Guide</span></a>.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.0.5.</span></p>
+</div>
+</dd>
+<dt><cite>canvas</cite>: str, defaults to None</dt><dd><p>Canvas to add widget’s canvas to. Can be ‘before’, ‘after’ or
+None for the default canvas.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.9.0.</span></p>
+</div>
+</dd>
+</dl>
+</dd>
+</dl>
+</div></blockquote>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">kivy.uix.button</span> <span class="kn">import</span> <span class="n">Button</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">kivy.uix.slider</span> <span class="kn">import</span> <span class="n">Slider</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">root</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">root</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">Button</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">slider</span> <span class="o">=</span> <span class="n">Slider</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">root</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">slider</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapView.animated_diff_scale_at">
+<span class="sig-name descname"><span class="pre">animated_diff_scale_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapView.animated_diff_scale_at" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapView.animation_duration">
+<span class="sig-name descname"><span class="pre">animation_duration</span></span><a class="headerlink" href="#kivy_garden.mapview.MapView.animation_duration" title="Permalink to this definition"></a></dt>
+<dd><p>Duration to animate Tiles alpha from 0 to 1 when it’s ready to show.
+Default to 100 as 100ms. Use 0 to deactivate.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapView.background_color">
+<span class="sig-name descname"><span class="pre">background_color</span></span><a class="headerlink" href="#kivy_garden.mapview.MapView.background_color" title="Permalink to this definition"></a></dt>
+<dd><p>ListProperty(defaultvalue=0, <a href="#id12"><span class="problematic" id="id13">**</span></a>kw)
+Property that represents a list.</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><cite>defaultvalue</cite>: list, defaults to []</dt><dd><p>Specifies the default value of the property.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When assigning a list to a <code class="xref py py-class docutils literal notranslate"><span class="pre">ListProperty</span></code>, the list stored in
+the property is a shallow copy of the list and not the original list. This can
+be demonstrated with the following example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">MyWidget</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">my_list</span> <span class="o">=</span> <span class="n">ListProperty</span><span class="p">([])</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">widget</span> <span class="o">=</span> <span class="n">MyWidget</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;hi&#39;</span><span class="p">:</span> <span class="s1">&#39;hello&#39;</span><span class="p">}]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">widget</span><span class="o">.</span><span class="n">my_list</span> <span class="o">=</span> <span class="n">my_list</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">my_list</span> <span class="ow">is</span> <span class="n">widget</span><span class="o">.</span><span class="n">my_list</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">my_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">,</span> <span class="n">widget</span><span class="o">.</span><span class="n">my_list</span><span class="p">)</span>
+<span class="go">[1, 5, {&#39;hi&#39;: &#39;hello&#39;}, 10] [1, 5, {&#39;hi&#39;: &#39;hello&#39;}]</span>
+</pre></div>
+</div>
+<p>However, changes to nested levels will affect the property as well,
+since the property uses a shallow copy of my_list.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_list</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="s1">&#39;hi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;bye&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">,</span> <span class="n">widget</span><span class="o">.</span><span class="n">my_list</span><span class="p">)</span>
+<span class="go">[1, 5, {&#39;hi&#39;: &#39;bye&#39;}, 10] [1, 5, {&#39;hi&#39;: &#39;bye&#39;}]</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapView.bbox">
+<span class="sig-name descname"><span class="pre">bbox</span></span><a class="headerlink" href="#kivy_garden.mapview.MapView.bbox" title="Permalink to this definition"></a></dt>
+<dd><p>AliasProperty(getter, setter=None, rebind=False, watch_before_use=True, <a href="#id14"><span class="problematic" id="id15">**</span></a>kwargs)
+Create a property with a custom getter and setter.</p>
+<blockquote>
+<div><p>If you don’t find a Property class that fits to your needs, you can make
+your own by creating custom Python getter and setter methods.</p>
+<p>Example from kivy/uix/widget.py where <cite>x</cite> and <cite>width</cite> are instances of
+<code class="xref py py-class docutils literal notranslate"><span class="pre">NumericProperty</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_right</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span>
+<span class="k">def</span> <span class="nf">set_right</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">value</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span>
+<span class="n">right</span> <span class="o">=</span> <span class="n">AliasProperty</span><span class="p">(</span><span class="n">get_right</span><span class="p">,</span> <span class="n">set_right</span><span class="p">,</span> <span class="n">bind</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;width&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>If <cite>x</cite> were a non Kivy property then you have to return <cite>True</cite> from setter
+to dispatch new value of <cite>right</cite>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">set_right</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">value</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span>
+    <span class="k">return</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<p>Usually <cite>bind</cite> list should contain all Kivy properties used in getter
+method. If you return <cite>True</cite> it will cause a dispatch which one should do
+when the property value has changed, but keep in mind that the property
+could already have dispatched the changed value if a kivy property the
+alias property is bound was set in the setter, causing a second dispatch
+if the setter returns <cite>True</cite>.</p>
+<p>If you want to cache the value returned by getter then pass <cite>cache=True</cite>.
+This way getter will only be called if new value is set or one of the
+binded properties changes. In both cases new value of alias property will
+be cached again.</p>
+<p>To make property readonly pass <cite>None</cite> as setter. This way <cite>AttributeError</cite>
+will be raised on every set attempt:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">right</span> <span class="o">=</span> <span class="n">AliasProperty</span><span class="p">(</span><span class="n">get_right</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">bind</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;width&#39;</span><span class="p">],</span> <span class="n">cache</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><cite>getter</cite>: function</dt><dd><p>Function to use as a property getter.</p>
+</dd>
+<dt><cite>setter</cite>: function</dt><dd><p>Function to use as a property setter. Callbacks bound to the
+alias property won’t be called when the property is set (e.g.
+<cite>right = 10</cite>), unless the setter returns <cite>True</cite>.</p>
+</dd>
+<dt><cite>bind</cite>: list/tuple</dt><dd><p>Properties to observe for changes as property name strings.
+Changing values of this properties will dispatch value of the
+alias property.</p>
+</dd>
+<dt><cite>cache</cite>: boolean</dt><dd><p>If <cite>True</cite>, the value will be cached until one of the binded
+elements changes or if setter returns <cite>True</cite>.</p>
+</dd>
+<dt><cite>rebind</cite>: bool, defaults to <cite>False</cite></dt><dd><p>See <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectProperty</span></code> for details.</p>
+</dd>
+<dt><cite>watch_before_use</cite>: bool, defaults to <code class="docutils literal notranslate"><span class="pre">True</span></code></dt><dd><p>Whether the <code class="docutils literal notranslate"><span class="pre">bind</span></code> properties are tracked (bound) before this
+property is used in any way.</p>
+<p>By default, the getter is called if the <code class="docutils literal notranslate"><span class="pre">bind</span></code> properties update
+or if the property value (unless cached) is read. As an
+optimization to speed up widget creation, when <code class="docutils literal notranslate"><span class="pre">watch_before_use</span></code>
+is False, we only track the bound properties once this property is
+used in any way (i.e. it is bound, it was set/read, etc).</p>
+<p>The property value read/set/bound will be correct as expected in
+both cases. The difference is only that when <code class="docutils literal notranslate"><span class="pre">False</span></code>, any side
+effects from the <code class="docutils literal notranslate"><span class="pre">getter</span></code> would not occur until this property is
+interacted with in any way because the <code class="docutils literal notranslate"><span class="pre">getter</span></code> won’t be called
+early.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.9.0: </span><cite>rebind</cite> has been introduced.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.4.0: </span>Parameter <cite>cache</cite> added.</p>
+</div>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapView.bbox_for_zoom">
+<span class="sig-name descname"><span class="pre">bbox_for_zoom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zoom</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapView.bbox_for_zoom" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapView.cache_dir">
+<span class="sig-name descname"><span class="pre">cache_dir</span></span><a class="headerlink" href="#kivy_garden.mapview.MapView.cache_dir" title="Permalink to this definition"></a></dt>
+<dd><p>StringProperty(defaultvalue=u’’, <a href="#id16"><span class="problematic" id="id17">**</span></a>kw)
+Property that represents a string value.</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><cite>defaultvalue</cite>: string, defaults to ‘’</dt><dd><p>Specifies the default value of the property.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapView.center_on">
+<span class="sig-name descname"><span class="pre">center_on</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapView.center_on" title="Permalink to this definition"></a></dt>
+<dd><p>Center the map on the coordinate <a class="reference internal" href="#kivy_garden.mapview.Coordinate" title="kivy_garden.mapview.Coordinate"><code class="xref py py-class docutils literal notranslate"><span class="pre">Coordinate</span></code></a>, or a (lat, lon)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapView.delta_x">
+<span class="sig-name descname"><span class="pre">delta_x</span></span><a class="headerlink" href="#kivy_garden.mapview.MapView.delta_x" title="Permalink to this definition"></a></dt>
+<dd><p>NumericProperty(defaultvalue=0, <a href="#id18"><span class="problematic" id="id19">**</span></a>kw)
+Property that represents a numeric value.</p>
+<blockquote>
+<div><p>It only accepts the int or float numeric data type or a string that can be
+converted to a number as shown below. For other numeric types use ObjectProperty
+or use errorhandler to convert it to an int/float.</p>
+<p>It does not support numpy numbers so they must be manually converted to int/float.
+E.g. <code class="docutils literal notranslate"><span class="pre">widget.num</span> <span class="pre">=</span> <span class="pre">np.arange(4)[0]</span></code> will raise an exception. Numpy arrays are not
+supported at all, even by ObjectProperty because their comparision does not return
+a bool. But if you must use a Kivy property, use a ObjectProperty with <code class="docutils literal notranslate"><span class="pre">comparator</span></code>
+set to <code class="docutils literal notranslate"><span class="pre">np.array_equal</span></code>. E.g.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="n">EventDispatcher</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">data</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="n">comparator</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array_equal</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="nb">print</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">&lt;__main__.A object at 0x000001C839B50208&gt; [0 1]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">&lt;__main__.A object at 0x000001C839B50208&gt; [0 1 2]</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><cite>defaultvalue</cite>: int or float, defaults to 0</dt><dd><p>Specifies the default value of the property.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">wid</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">wid</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">wid</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+<span class="go">42</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">wid</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;plop&quot;</span>
+<span class="go"> Traceback (most recent call last):</span>
+<span class="go">   File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</span>
+<span class="go">   File &quot;properties.pyx&quot;, line 93, in kivy.properties.Property.__set__</span>
+<span class="go">   File &quot;properties.pyx&quot;, line 111, in kivy.properties.Property.set</span>
+<span class="go">   File &quot;properties.pyx&quot;, line 159, in kivy.properties.NumericProperty.check</span>
+<span class="go"> ValueError: NumericProperty accept only int/float</span>
+</pre></div>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.4.1: </span>NumericProperty can now accept custom text and tuple value to indicate a
+type, like “in”, “pt”, “px”, “cm”, “mm”, in the format: ‘10pt’ or (10,
+‘pt’).</p>
+</div>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapView.delta_y">
+<span class="sig-name descname"><span class="pre">delta_y</span></span><a class="headerlink" href="#kivy_garden.mapview.MapView.delta_y" title="Permalink to this definition"></a></dt>
+<dd><p>NumericProperty(defaultvalue=0, <a href="#id20"><span class="problematic" id="id21">**</span></a>kw)
+Property that represents a numeric value.</p>
+<blockquote>
+<div><p>It only accepts the int or float numeric data type or a string that can be
+converted to a number as shown below. For other numeric types use ObjectProperty
+or use errorhandler to convert it to an int/float.</p>
+<p>It does not support numpy numbers so they must be manually converted to int/float.
+E.g. <code class="docutils literal notranslate"><span class="pre">widget.num</span> <span class="pre">=</span> <span class="pre">np.arange(4)[0]</span></code> will raise an exception. Numpy arrays are not
+supported at all, even by ObjectProperty because their comparision does not return
+a bool. But if you must use a Kivy property, use a ObjectProperty with <code class="docutils literal notranslate"><span class="pre">comparator</span></code>
+set to <code class="docutils literal notranslate"><span class="pre">np.array_equal</span></code>. E.g.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="n">EventDispatcher</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">data</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="n">comparator</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array_equal</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="nb">print</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">&lt;__main__.A object at 0x000001C839B50208&gt; [0 1]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">&lt;__main__.A object at 0x000001C839B50208&gt; [0 1 2]</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><cite>defaultvalue</cite>: int or float, defaults to 0</dt><dd><p>Specifies the default value of the property.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">wid</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">wid</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">wid</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+<span class="go">42</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">wid</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;plop&quot;</span>
+<span class="go"> Traceback (most recent call last):</span>
+<span class="go">   File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</span>
+<span class="go">   File &quot;properties.pyx&quot;, line 93, in kivy.properties.Property.__set__</span>
+<span class="go">   File &quot;properties.pyx&quot;, line 111, in kivy.properties.Property.set</span>
+<span class="go">   File &quot;properties.pyx&quot;, line 159, in kivy.properties.NumericProperty.check</span>
+<span class="go"> ValueError: NumericProperty accept only int/float</span>
+</pre></div>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.4.1: </span>NumericProperty can now accept custom text and tuple value to indicate a
+type, like “in”, “pt”, “px”, “cm”, “mm”, in the format: ‘10pt’ or (10,
+‘pt’).</p>
+</div>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapView.diff_scale_at">
+<span class="sig-name descname"><span class="pre">diff_scale_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapView.diff_scale_at" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapView.do_update">
+<span class="sig-name descname"><span class="pre">do_update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapView.do_update" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapView.double_tap_zoom">
+<span class="sig-name descname"><span class="pre">double_tap_zoom</span></span><a class="headerlink" href="#kivy_garden.mapview.MapView.double_tap_zoom" title="Permalink to this definition"></a></dt>
+<dd><p>If True, this will activate the double-tap to zoom.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapView.get_bbox">
+<span class="sig-name descname"><span class="pre">get_bbox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">margin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapView.get_bbox" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the bounding box from the bottom/left (lat1, lon1) to
+top/right (lat2, lon2).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapView.get_latlon_at">
+<span class="sig-name descname"><span class="pre">get_latlon_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zoom</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapView.get_latlon_at" title="Permalink to this definition"></a></dt>
+<dd><p>Return the current <a class="reference internal" href="#kivy_garden.mapview.Coordinate" title="kivy_garden.mapview.Coordinate"><code class="xref py py-class docutils literal notranslate"><span class="pre">Coordinate</span></code></a> within the (x, y) widget
+coordinate.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapView.get_window_xy_from">
+<span class="sig-name descname"><span class="pre">get_window_xy_from</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zoom</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapView.get_window_xy_from" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the x/y position in the widget absolute coordinates
+from a lat/lon</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapView.lat">
+<span class="sig-name descname"><span class="pre">lat</span></span><a class="headerlink" href="#kivy_garden.mapview.MapView.lat" title="Permalink to this definition"></a></dt>
+<dd><p>Latitude at the center of the widget</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapView.load_tile">
+<span class="sig-name descname"><span class="pre">load_tile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zoom</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapView.load_tile" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapView.load_tile_for_source">
+<span class="sig-name descname"><span class="pre">load_tile_for_source</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">map_source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">opacity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zoom</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapView.load_tile_for_source" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapView.load_visible_tiles">
+<span class="sig-name descname"><span class="pre">load_visible_tiles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapView.load_visible_tiles" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapView.lon">
+<span class="sig-name descname"><span class="pre">lon</span></span><a class="headerlink" href="#kivy_garden.mapview.MapView.lon" title="Permalink to this definition"></a></dt>
+<dd><p>Longitude at the center of the widget</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapView.map_source">
+<span class="sig-name descname"><span class="pre">map_source</span></span><a class="headerlink" href="#kivy_garden.mapview.MapView.map_source" title="Permalink to this definition"></a></dt>
+<dd><p>Provider of the map, default to a empty <a class="reference internal" href="#kivy_garden.mapview.MapSource" title="kivy_garden.mapview.MapSource"><code class="xref py py-class docutils literal notranslate"><span class="pre">MapSource</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapView.move_tiles_to_background">
+<span class="sig-name descname"><span class="pre">move_tiles_to_background</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapView.move_tiles_to_background" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapView.on__pause">
+<span class="sig-name descname"><span class="pre">on__pause</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">instance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapView.on__pause" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapView.on_map_relocated">
+<span class="sig-name descname"><span class="pre">on_map_relocated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zoom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coord</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapView.on_map_relocated" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapView.on_map_source">
+<span class="sig-name descname"><span class="pre">on_map_source</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">instance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapView.on_map_source" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapView.on_pos">
+<span class="sig-name descname"><span class="pre">on_pos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">instance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapView.on_pos" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapView.on_size">
+<span class="sig-name descname"><span class="pre">on_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">instance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapView.on_size" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapView.on_touch_down">
+<span class="sig-name descname"><span class="pre">on_touch_down</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">touch</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapView.on_touch_down" title="Permalink to this definition"></a></dt>
+<dd><p>Receive a touch down event.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><cite>touch</cite>: <a class="reference external" href="https://kivy.org/doc/stable/api-kivy.input.motionevent.html#kivy.input.motionevent.MotionEvent" title="(in Kivy v2.1.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">MotionEvent</span></code></a> class</dt><dd><p>Touch received. The touch is in parent coordinates. See
+<a class="reference external" href="https://kivy.org/doc/stable/api-kivy.uix.relativelayout.html#module-kivy.uix.relativelayout" title="(in Kivy v2.1.0)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">relativelayout</span></code></a> for a discussion on
+coordinate systems.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>bool
+If True, the dispatching of the touch event will stop.
+If False, the event will continue to be dispatched to the rest
+of the widget tree.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapView.on_touch_up">
+<span class="sig-name descname"><span class="pre">on_touch_up</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">touch</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapView.on_touch_up" title="Permalink to this definition"></a></dt>
+<dd><p>Receive a touch up event. The touch is in parent coordinates.</p>
+<p>See <a class="reference internal" href="#kivy_garden.mapview.MapView.on_touch_down" title="kivy_garden.mapview.MapView.on_touch_down"><code class="xref py py-meth docutils literal notranslate"><span class="pre">on_touch_down()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapView.on_transform">
+<span class="sig-name descname"><span class="pre">on_transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapView.on_transform" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapView.on_zoom">
+<span class="sig-name descname"><span class="pre">on_zoom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">instance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zoom</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapView.on_zoom" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapView.pause_on_action">
+<span class="sig-name descname"><span class="pre">pause_on_action</span></span><a class="headerlink" href="#kivy_garden.mapview.MapView.pause_on_action" title="Permalink to this definition"></a></dt>
+<dd><p>Pause any map loading / tiles loading when an action is done.
+This allow better performance on mobile, but can be safely deactivated on
+desktop.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapView.remove_all_tiles">
+<span class="sig-name descname"><span class="pre">remove_all_tiles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapView.remove_all_tiles" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapView.remove_layer">
+<span class="sig-name descname"><span class="pre">remove_layer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">layer</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapView.remove_layer" title="Permalink to this definition"></a></dt>
+<dd><p>Remove the layer</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapView.remove_marker">
+<span class="sig-name descname"><span class="pre">remove_marker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">marker</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapView.remove_marker" title="Permalink to this definition"></a></dt>
+<dd><p>Remove a marker from its layer</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapView.remove_widget">
+<span class="sig-name descname"><span class="pre">remove_widget</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">widget</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapView.remove_widget" title="Permalink to this definition"></a></dt>
+<dd><p>Remove a widget from the children of this widget.</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><cite>widget</cite>: <code class="xref py py-class docutils literal notranslate"><span class="pre">Widget</span></code></dt><dd><p>Widget to remove from our children list.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div></blockquote>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">kivy.uix.button</span> <span class="kn">import</span> <span class="n">Button</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">root</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">root</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">button</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">root</span><span class="o">.</span><span class="n">remove_widget</span><span class="p">(</span><span class="n">button</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapView.scale">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">scale</span></span><a class="headerlink" href="#kivy_garden.mapview.MapView.scale" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapView.scale_at">
+<span class="sig-name descname"><span class="pre">scale_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapView.scale_at" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapView.set_zoom_at">
+<span class="sig-name descname"><span class="pre">set_zoom_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zoom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapView.set_zoom_at" title="Permalink to this definition"></a></dt>
+<dd><p>Sets the zoom level, leaving the (x, y) at the exact same point
+in the view.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapView.snap_to_zoom">
+<span class="sig-name descname"><span class="pre">snap_to_zoom</span></span><a class="headerlink" href="#kivy_garden.mapview.MapView.snap_to_zoom" title="Permalink to this definition"></a></dt>
+<dd><p>When the user initiate a zoom, it will snap to the closest zoom for
+better graphics. The map can be blur if the map is scaled between 2 zoom.
+Default to True, even if it doesn’t fully working yet.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapView.sync_to">
+<span class="sig-name descname"><span class="pre">sync_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapView.sync_to" title="Permalink to this definition"></a></dt>
+<dd><p>Reflect the lat/lon/zoom of the other MapView to the current one.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapView.tile_in_tile_map">
+<span class="sig-name descname"><span class="pre">tile_in_tile_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tile_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tile_y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapView.tile_in_tile_map" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapView.tile_map_set">
+<span class="sig-name descname"><span class="pre">tile_map_set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tile_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tile_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapView.tile_map_set" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapView.trigger_update">
+<span class="sig-name descname"><span class="pre">trigger_update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">full</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapView.trigger_update" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapView.unload">
+<span class="sig-name descname"><span class="pre">unload</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MapView.unload" title="Permalink to this definition"></a></dt>
+<dd><p>Unload the view and all the layers.
+It also cancel all the remaining downloads.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapView.viewport_pos">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">viewport_pos</span></span><a class="headerlink" href="#kivy_garden.mapview.MapView.viewport_pos" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MapView.zoom">
+<span class="sig-name descname"><span class="pre">zoom</span></span><a class="headerlink" href="#kivy_garden.mapview.MapView.zoom" title="Permalink to this definition"></a></dt>
+<dd><p>Zoom of the widget. Must be between <a class="reference internal" href="#kivy_garden.mapview.MapSource.get_min_zoom" title="kivy_garden.mapview.MapSource.get_min_zoom"><code class="xref py py-meth docutils literal notranslate"><span class="pre">MapSource.get_min_zoom()</span></code></a> and
+<a class="reference internal" href="#kivy_garden.mapview.MapSource.get_max_zoom" title="kivy_garden.mapview.MapSource.get_max_zoom"><code class="xref py py-meth docutils literal notranslate"><span class="pre">MapSource.get_max_zoom()</span></code></a>. Default to 0.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MarkerMapLayer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kivy_garden.mapview.</span></span><span class="sig-name descname"><span class="pre">MarkerMapLayer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MarkerMapLayer" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kivy_garden.mapview.MapLayer" title="kivy_garden.mapview.view.MapLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">kivy_garden.mapview.view.MapLayer</span></code></a></p>
+<p>A map layer for <a class="reference internal" href="#kivy_garden.mapview.MapMarker" title="kivy_garden.mapview.MapMarker"><code class="xref py py-class docutils literal notranslate"><span class="pre">MapMarker</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MarkerMapLayer.add_widget">
+<span class="sig-name descname"><span class="pre">add_widget</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">marker</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MarkerMapLayer.add_widget" title="Permalink to this definition"></a></dt>
+<dd><p>Add a new widget as a child of this widget.</p>
+<blockquote>
+<div><dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><cite>widget</cite>: <code class="xref py py-class docutils literal notranslate"><span class="pre">Widget</span></code></dt><dd><p>Widget to add to our list of children.</p>
+</dd>
+<dt><cite>index</cite>: int, defaults to 0</dt><dd><p>Index to insert the widget in the list. Notice that the default
+of 0 means the widget is inserted at the beginning of the list
+and will thus be drawn on top of other sibling widgets. For a
+full discussion of the index and widget hierarchy, please see
+the <a class="reference external" href="https://kivy.org/doc/stable/guide/widgets.html" title="(in Kivy v2.1.0)"><span class="xref std std-doc">Widgets Programming Guide</span></a>.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.0.5.</span></p>
+</div>
+</dd>
+<dt><cite>canvas</cite>: str, defaults to None</dt><dd><p>Canvas to add widget’s canvas to. Can be ‘before’, ‘after’ or
+None for the default canvas.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.9.0.</span></p>
+</div>
+</dd>
+</dl>
+</dd>
+</dl>
+</div></blockquote>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">kivy.uix.button</span> <span class="kn">import</span> <span class="n">Button</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">kivy.uix.slider</span> <span class="kn">import</span> <span class="n">Slider</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">root</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">root</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">Button</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">slider</span> <span class="o">=</span> <span class="n">Slider</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">root</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">slider</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MarkerMapLayer.insert_marker">
+<span class="sig-name descname"><span class="pre">insert_marker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">marker</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MarkerMapLayer.insert_marker" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MarkerMapLayer.order_marker_by_latitude">
+<span class="sig-name descname"><span class="pre">order_marker_by_latitude</span></span><a class="headerlink" href="#kivy_garden.mapview.MarkerMapLayer.order_marker_by_latitude" title="Permalink to this definition"></a></dt>
+<dd><p>BooleanProperty(defaultvalue=True, <a href="#id22"><span class="problematic" id="id23">**</span></a>kw)
+Property that represents only a boolean value.</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><cite>defaultvalue</cite>: boolean</dt><dd><p>Specifies the default value of the property.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MarkerMapLayer.remove_widget">
+<span class="sig-name descname"><span class="pre">remove_widget</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">marker</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MarkerMapLayer.remove_widget" title="Permalink to this definition"></a></dt>
+<dd><p>Remove a widget from the children of this widget.</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><cite>widget</cite>: <code class="xref py py-class docutils literal notranslate"><span class="pre">Widget</span></code></dt><dd><p>Widget to remove from our children list.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div></blockquote>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">kivy.uix.button</span> <span class="kn">import</span> <span class="n">Button</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">root</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">root</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">button</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">root</span><span class="o">.</span><span class="n">remove_widget</span><span class="p">(</span><span class="n">button</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MarkerMapLayer.reposition">
+<span class="sig-name descname"><span class="pre">reposition</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MarkerMapLayer.reposition" title="Permalink to this definition"></a></dt>
+<dd><p>Function called when <a class="reference internal" href="#kivy_garden.mapview.MapView" title="kivy_garden.mapview.MapView"><code class="xref py py-class docutils literal notranslate"><span class="pre">MapView</span></code></a> is moved. You must recalculate
+the position of your children.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MarkerMapLayer.set_marker_position">
+<span class="sig-name descname"><span class="pre">set_marker_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mapview</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">marker</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MarkerMapLayer.set_marker_position" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kivy_garden.mapview.MarkerMapLayer.unload">
+<span class="sig-name descname"><span class="pre">unload</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.mapview.MarkerMapLayer.unload" title="Permalink to this definition"></a></dt>
+<dd><p>Called when the view want to completly unload the layer.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<span class="target" id="module-mapview"></span><dl class="py class">
+<dt class="sig sig-object py" id="mapview.Coordinate">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mapview.</span></span><span class="sig-name descname"><span class="pre">Coordinate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mapview.Coordinate" title="Permalink to this definition"></a></dt>
+<dd><p>Named tuple that represent a geographic coordinate with latitude/longitude</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lon</strong> (<em>float</em>) – Longitude</p></li>
+<li><p><strong>lat</strong> (<em>float</em>) – Latitude</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mapview.MapSource">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mapview.</span></span><span class="sig-name descname"><span class="pre">MapSource</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_zoom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_zoom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tile_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_ext</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attribution</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subdomains</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mapview.MapSource" title="Permalink to this definition"></a></dt>
+<dd><p>Class that represent a map source. All the transformations from X/Y/Z to
+longitude, latitude, zoom, and limitations of the providers goes are stored
+here.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>url</strong> (<em>str</em>) – Tile’s url of the providers.
+Defaults to <cite>http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png</cite></p></li>
+<li><p><strong>cache_key</strong> (<em>str</em>) – Key for storing the tiles. Must be unique and not
+colliding with another providers, otherwise tiles will not be
+downloaded again.
+Defaults to “osm”</p></li>
+<li><p><strong>min_zoom</strong> (<em>int</em>) – Minimum zoom value acceptable for this provider.
+Defaults to 0.</p></li>
+<li><p><strong>max_zoom</strong> (<em>int</em>) – Maximum zoom value acceptable for this provider.
+Defaults to 19.</p></li>
+<li><p><strong>tile_size</strong> (<em>int</em>) – Size of a image tile returned by the provider.
+Defaults to 256.</p></li>
+<li><p><strong>attribution</strong> (<em>str</em>) – Attribution for this provider.
+Defaults to empty string</p></li>
+<li><p><strong>subdomains</strong> (<em>str</em>) – Domains substitutions for the {s} in the url.
+Defaults to “abc”</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="mapview.MapSource.get_x">
+<span class="sig-name descname"><span class="pre">get_x</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zoom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lon</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mapview.MapSource.get_x" title="Permalink to this definition"></a></dt>
+<dd><p>Get the x position to the longitude in the map source’s projection</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>zoom</strong> (<em>int</em>) – Zoom level to look at</p></li>
+<li><p><strong>lon</strong> (<em>float</em>) – Longitude</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>X position</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mapview.MapSource.get_y">
+<span class="sig-name descname"><span class="pre">get_y</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zoom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mapview.MapSource.get_y" title="Permalink to this definition"></a></dt>
+<dd><p>Get the y position to the latitude in the map source’s projection</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>zoom</strong> (<em>int</em>) – Zoom level to look at</p></li>
+<li><p><strong>lat</strong> (<em>float</em>) – Latitude</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Y position</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mapview.MapSource.get_lon">
+<span class="sig-name descname"><span class="pre">get_lon</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zoom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mapview.MapSource.get_lon" title="Permalink to this definition"></a></dt>
+<dd><p>Get the longitude to the x position in the map source’s projection</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>zoom</strong> (<em>int</em>) – Zoom level to look at</p></li>
+<li><p><strong>x</strong> (<em>float</em>) – X position in the map</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Longitude</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mapview.MapSource.get_lat">
+<span class="sig-name descname"><span class="pre">get_lat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zoom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mapview.MapSource.get_lat" title="Permalink to this definition"></a></dt>
+<dd><p>Get the latitude to the y position in the map source’s projection</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>zoom</strong> (<em>int</em>) – Zoom level to look at</p></li>
+<li><p><strong>y</strong> (<em>float</em>) – Y position in the map</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Latitude</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mapview.MapSource.get_col_count">
+<span class="sig-name descname"><span class="pre">get_col_count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zoom</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mapview.MapSource.get_col_count" title="Permalink to this definition"></a></dt>
+<dd><p>Return the number of column for this provider at this zoom level.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>zoom</strong> (<em>int</em>) – Zoom level to look at</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Number of column</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mapview.MapSource.get_row_count">
+<span class="sig-name descname"><span class="pre">get_row_count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zoom</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mapview.MapSource.get_row_count" title="Permalink to this definition"></a></dt>
+<dd><p>Return the number of row for this provider at this zoom level.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>zoom</strong> (<em>int</em>) – Zoom level to look at</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Number of rows</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mapview.MapSource.get_max_zoom">
+<span class="sig-name descname"><span class="pre">get_max_zoom</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mapview.MapSource.get_max_zoom" title="Permalink to this definition"></a></dt>
+<dd><p>Return the maximum zoom of this source</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Maximum zoom</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mapview.MapSource.get_min_zoom">
+<span class="sig-name descname"><span class="pre">get_min_zoom</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mapview.MapSource.get_min_zoom" title="Permalink to this definition"></a></dt>
+<dd><p>Return the minimum zoom of this source</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Minimum zoom</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mapview.MapMarker">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mapview.</span></span><span class="sig-name descname"><span class="pre">MapMarker</span></span><a class="headerlink" href="#mapview.MapMarker" title="Permalink to this definition"></a></dt>
+<dd><p>A marker on the map, that must be used on a <a class="reference internal" href="#mapview.MapMarker" title="mapview.MapMarker"><code class="xref py py-class docutils literal notranslate"><span class="pre">MapMarker</span></code></a>, or with
+<a class="reference internal" href="#mapview.MapView.add_marker" title="mapview.MapView.add_marker"><code class="xref py py-meth docutils literal notranslate"><span class="pre">MapView.add_marker()</span></code></a> or with <code class="xref py py-meth docutils literal notranslate"><span class="pre">MapView.add_widget()</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Events</dt>
+<dd class="field-odd"><p><cite>on_press</cite>: Fired when the MapMarker is pressed
+<cite>on_release</cite>: Fired when the MapMarker is release</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mapview.MapMarker.anchor_x">
+<span class="sig-name descname"><span class="pre">anchor_x</span></span><a class="headerlink" href="#mapview.MapMarker.anchor_x" title="Permalink to this definition"></a></dt>
+<dd><p>Anchor of the Marker on the X axis. Defaults to 0.5, means the anchor
+will be at the X center of the image</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mapview.MapMarker.anchor_y">
+<span class="sig-name descname"><span class="pre">anchor_y</span></span><a class="headerlink" href="#mapview.MapMarker.anchor_y" title="Permalink to this definition"></a></dt>
+<dd><p>Anchor of the marker on the Y axis. Defaults to 0, means the anchor
+will be at the Y bottom of the image</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mapview.MapMarker.lat">
+<span class="sig-name descname"><span class="pre">lat</span></span><a class="headerlink" href="#mapview.MapMarker.lat" title="Permalink to this definition"></a></dt>
+<dd><p>Latitude of the marker</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mapview.MapMarker.lon">
+<span class="sig-name descname"><span class="pre">lon</span></span><a class="headerlink" href="#mapview.MapMarker.lon" title="Permalink to this definition"></a></dt>
+<dd><p>Longitude of the marker</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mapview.MapMarker.source">
+<span class="sig-name descname"><span class="pre">source</span></span><a class="headerlink" href="#mapview.MapMarker.source" title="Permalink to this definition"></a></dt>
+<dd><p>Image source of the marker, defaults to <cite>marker.png</cite> within the mapview
+package.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mapview.MapView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mapview.</span></span><span class="sig-name descname"><span class="pre">MapView</span></span><a class="headerlink" href="#mapview.MapView" title="Permalink to this definition"></a></dt>
+<dd><p>MapView is a widget that control the map displaying, navigation and layers
+management.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Available events</dt>
+<dd class="field-odd"><p><cite>on_map_relocated</cite>: called everytime the MapView change location</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mapview.MapView.lon">
+<span class="sig-name descname"><span class="pre">lon</span></span><a class="headerlink" href="#mapview.MapView.lon" title="Permalink to this definition"></a></dt>
+<dd><p>Longitude at the center of the widget, read-only.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mapview.MapView.lat">
+<span class="sig-name descname"><span class="pre">lat</span></span><a class="headerlink" href="#mapview.MapView.lat" title="Permalink to this definition"></a></dt>
+<dd><p>Latitude at the center of the widget, read-only.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mapview.MapView.zoom">
+<span class="sig-name descname"><span class="pre">zoom</span></span><a class="headerlink" href="#mapview.MapView.zoom" title="Permalink to this definition"></a></dt>
+<dd><p>Zoom of the MapView. Must be between <a class="reference internal" href="#mapview.MapSource.get_min_zoom" title="mapview.MapSource.get_min_zoom"><code class="xref py py-meth docutils literal notranslate"><span class="pre">MapSource.get_min_zoom()</span></code></a> and
+<a class="reference internal" href="#mapview.MapSource.get_max_zoom" title="mapview.MapSource.get_max_zoom"><code class="xref py py-meth docutils literal notranslate"><span class="pre">MapSource.get_max_zoom()</span></code></a>. Default to 0</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mapview.MapView.map_source">
+<span class="sig-name descname"><span class="pre">map_source</span></span><a class="headerlink" href="#mapview.MapView.map_source" title="Permalink to this definition"></a></dt>
+<dd><p>Provider of the map, default to an empty <a class="reference internal" href="#mapview.MapSource" title="mapview.MapSource"><code class="xref py py-class docutils literal notranslate"><span class="pre">MapSource</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mapview.MapView.double_tap_zoom">
+<span class="sig-name descname"><span class="pre">double_tap_zoom</span></span><a class="headerlink" href="#mapview.MapView.double_tap_zoom" title="Permalink to this definition"></a></dt>
+<dd><p>If True, this will activate the double-tap to zoom.</p>
+<p>Defaults to False.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mapview.MapView.pause_on_action">
+<span class="sig-name descname"><span class="pre">pause_on_action</span></span><a class="headerlink" href="#mapview.MapView.pause_on_action" title="Permalink to this definition"></a></dt>
+<dd><p>Pause on any loading / tiles loading when an action is done. This allow
+better performance on mobile, but can be safely deactivated on desktop.</p>
+<p>Defaults to True.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mapview.MapView.scale">
+<span class="sig-name descname"><span class="pre">scale</span></span><a class="headerlink" href="#mapview.MapView.scale" title="Permalink to this definition"></a></dt>
+<dd><p>Current scale of the internal scatter, read-only. This is usually not
+used in user-side unless you’re hacking mapview.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mapview.MapView.snap_to_zoom">
+<span class="sig-name descname"><span class="pre">snap_to_zoom</span></span><a class="headerlink" href="#mapview.MapView.snap_to_zoom" title="Permalink to this definition"></a></dt>
+<dd><p>When the user initiate a zoom, it will snap to the closest zoom for
+better graphics. The map can be blur if the map is scaled between 2
+zoom.</p>
+<p>Defaults to True, even if it doesn’t fully working yet.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mapview.MapView.add_layer">
+<span class="sig-name descname"><span class="pre">add_layer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">layer</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mapview.MapView.add_layer" title="Permalink to this definition"></a></dt>
+<dd><p>Add a new layer to update at the same time than the base tile layer</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>layer</strong> (<a class="reference internal" href="#mapview.MapLayer" title="mapview.MapLayer"><em>MapLayer</em></a>) – Map layer to add</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mapview.MapView.add_marker">
+<span class="sig-name descname"><span class="pre">add_marker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">marker</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mapview.MapView.add_marker" title="Permalink to this definition"></a></dt>
+<dd><p>Add a marker into a <cite>layer</cite>. If <cite>layer</cite> is None, it will be added in
+the default marker layer. If there is no default marker layer, a new
+one will be automatically created.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>marker</strong> (<a class="reference internal" href="#mapview.MapMarker" title="mapview.MapMarker"><em>MapMarker</em></a>) – The marker to add</p></li>
+<li><p><strong>layer</strong> (<a class="reference internal" href="#mapview.MarkerMapLayer" title="mapview.MarkerMapLayer"><em>MarkerMapLayer</em></a>) – The layer to use</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mapview.MapView.center_on">
+<span class="sig-name descname"><span class="pre">center_on</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lon</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mapview.MapView.center_on" title="Permalink to this definition"></a></dt>
+<dd><p>Center the map on the coordinate (lat, lon)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lat</strong> (<em>float</em>) – Latitude</p></li>
+<li><p><strong>lon</strong> (<em>float</em>) – Longitude</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mapview.MapView.get_bbox">
+<span class="sig-name descname"><span class="pre">get_bbox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">margin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mapview.MapView.get_bbox" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the bounding box from the bottom-left to the top-right.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>margin</strong> (<em>float</em>) – Optionnal margin to extend the Bbox bounds</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Bounding box</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Bbox</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_latlon_at(x,</span> <span class="pre">y,</span> <span class="pre">zoom=None):</span></span></dt>
+<dd><p>Return the current coordinate (lat, lon) at the (x, y) widget coordinate</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>float</em>) – X widget coordinate</p></li>
+<li><p><strong>y</strong> (<em>float</em>) – Y widget coordinate</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>lat/lon Coordinate</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#mapview.Coordinate" title="mapview.Coordinate"><code class="xref py py-class docutils literal notranslate"><span class="pre">Coordinate</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mapview.MapView.remove_layer">
+<span class="sig-name descname"><span class="pre">remove_layer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">layer</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mapview.MapView.remove_layer" title="Permalink to this definition"></a></dt>
+<dd><p>Remove a previously added <a class="reference internal" href="#mapview.MapLayer" title="mapview.MapLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">MapLayer</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>layer</strong> (<a class="reference internal" href="#mapview.MapLayer" title="mapview.MapLayer"><em>MapLayer</em></a>) – A map layer</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mapview.MapView.remove_marker">
+<span class="sig-name descname"><span class="pre">remove_marker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">marker</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mapview.MapView.remove_marker" title="Permalink to this definition"></a></dt>
+<dd><p>Remove a previously added <code class="xref py py-class docutils literal notranslate"><span class="pre">MarkerMap</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>marker</strong> (<em>MarkerMap</em>) – The marker</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mapview.MapView.set_zoom_at">
+<span class="sig-name descname"><span class="pre">set_zoom_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zoom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mapview.MapView.set_zoom_at" title="Permalink to this definition"></a></dt>
+<dd><p>Sets the zoom level, leaving the (x, y) at the exact same point in the
+view.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>zoom</strong> (<em>float</em>) – New zoom</p></li>
+<li><p><strong>x</strong> (<em>float</em>) – X coordinate to zoom at</p></li>
+<li><p><strong>y</strong> (<em>float</em>) – Y coordinate to zoom at</p></li>
+<li><p><strong>scale</strong> (<em>float</em>) – (internal) Scale to set on the scatter</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mapview.MapView.unload">
+<span class="sig-name descname"><span class="pre">unload</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mapview.MapView.unload" title="Permalink to this definition"></a></dt>
+<dd><p>Unload the view and all the layers. It also cancel all the remaining
+downloads. The map should not be used after this.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mapview.MapLayer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mapview.</span></span><span class="sig-name descname"><span class="pre">MapLayer</span></span><a class="headerlink" href="#mapview.MapLayer" title="Permalink to this definition"></a></dt>
+<dd><p>A map layer. It is repositioned everytime the <a class="reference internal" href="#mapview.MapView" title="mapview.MapView"><code class="xref py py-class docutils literal notranslate"><span class="pre">MapView</span></code></a> is moved.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mapview.MapLayer.reposition">
+<span class="sig-name descname"><span class="pre">reposition</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mapview.MapLayer.reposition" title="Permalink to this definition"></a></dt>
+<dd><p>Function called when the <a class="reference internal" href="#mapview.MapView" title="mapview.MapView"><code class="xref py py-class docutils literal notranslate"><span class="pre">MapView</span></code></a> is moved. You must recalculate
+the position of your children, and handle the visibility.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mapview.MapLayer.unload">
+<span class="sig-name descname"><span class="pre">unload</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mapview.MapLayer.unload" title="Permalink to this definition"></a></dt>
+<dd><p>Called when the view want to completely unload the layer.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mapview.MarkerMapLayer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mapview.</span></span><span class="sig-name descname"><span class="pre">MarkerMapLayer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">MapLayer</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mapview.MarkerMapLayer" title="Permalink to this definition"></a></dt>
+<dd><p>A map layer specialized for handling <a class="reference internal" href="#mapview.MapMarker" title="mapview.MapMarker"><code class="xref py py-class docutils literal notranslate"><span class="pre">MapMarker</span></code></a>.</p>
+</dd></dl>
+
+<span class="target" id="module-mapview.mbtsource"></span><dl class="py class">
+<dt class="sig sig-object py" id="mapview.mbtsource.MBTilesMapSource">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mapview.mbtsource.</span></span><span class="sig-name descname"><span class="pre">MBTilesMapSource</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">MapSource</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mapview.mbtsource.MBTilesMapSource" title="Permalink to this definition"></a></dt>
+<dd><p>Use a <a class="reference external" href="http://mbtiles.org">Mbtiles</a> as a source for a <code class="xref py py-class docutils literal notranslate"><span class="pre">MapView</span></code></p>
+</dd></dl>
+
+<span class="target" id="module-mapview.geojson"></span><dl class="py class">
+<dt class="sig sig-object py" id="mapview.geojson.GeoJsonMapLayer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mapview.geojson.</span></span><span class="sig-name descname"><span class="pre">GeoJsonMapLayer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">MapLayer</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mapview.geojson.GeoJsonMapLayer" title="Permalink to this definition"></a></dt>
+<dd><p>A Geojson <code class="xref py py-class docutils literal notranslate"><span class="pre">MapLayer</span></code>.</p>
+<p><strong>Experimental</strong>, only Polygon and LineString feature are supported.
+Marker are not yet implemented, due to lack of API for wiring Marker
+selection back to you.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mapview.geojson.GeoJsonMapLayer.source">
+<span class="sig-name descname"><span class="pre">source</span></span><a class="headerlink" href="#mapview.geojson.GeoJsonMapLayer.source" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<p>A Geojson filename to load, defaults to None.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mapview.geojson.GeoJsonMapLayer.geojson">
+<span class="sig-name descname"><span class="pre">geojson</span></span><a class="headerlink" href="#mapview.geojson.GeoJsonMapLayer.geojson" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<p>A dictionary structured as a Geojson. This attribute contain the content
+of a <a class="reference internal" href="#mapview.geojson.GeoJsonMapLayer.source" title="mapview.geojson.GeoJsonMapLayer.source"><code class="xref py py-attr docutils literal notranslate"><span class="pre">source</span></code></a> if passed.</p>
+</dd></dl>
+
+<span class="target" id="module-mapview.clustered_marker_layer"></span><dl class="py class">
+<dt class="sig sig-object py" id="mapview.clustered_marker_layer.ClusteredMarkerLayer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mapview.clustered_marker_layer.</span></span><span class="sig-name descname"><span class="pre">ClusteredMarkerLayer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">MapLayer</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mapview.clustered_marker_layer.ClusteredMarkerLayer" title="Permalink to this definition"></a></dt>
+<dd><p><strong>Experimental</strong> Layout that implement <a class="reference external" href="https://developers.google.com/maps/documentation/javascript/marker-clustering">marker clustering</a>.
+It implement its own version of <a class="reference external" href="https://github.com/mapbox/supercluster/">Super Cluster</a>, based itself on a <a class="reference external" href="https://github.com/mourner/kdbush/">KD-tree</a>.</p>
+<p>Aka you can load like 2000 markers without issues. The cluster index is
+immutable, so if you add a new marker, it will be rebuild from scratch.</p>
+<p>Please note that the widget creation is done on the fly by the layer,
+not by you.</p>
+<p>DONT use <cite>add_widget</cite>, use <a class="reference internal" href="#mapview.clustered_marker_layer.ClusteredMarkerLayer.add_marker" title="mapview.clustered_marker_layer.ClusteredMarkerLayer.add_marker"><code class="xref py py-meth docutils literal notranslate"><span class="pre">add_marker()</span></code></a></p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">layer</span> <span class="o">=</span> <span class="n">ClusteredMarkerLayer</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2000</span><span class="p">):</span>
+    <span class="n">lon</span> <span class="o">=</span> <span class="n">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">360</span> <span class="o">-</span> <span class="mi">180</span>
+    <span class="n">lat</span> <span class="o">=</span> <span class="n">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">180</span> <span class="o">-</span> <span class="mi">90</span>
+    <span class="n">layer</span><span class="o">.</span><span class="n">add_marker</span><span class="p">(</span><span class="n">lon</span><span class="o">=</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="o">=</span><span class="n">lat</span><span class="p">,</span> <span class="bp">cls</span><span class="o">=</span><span class="n">MapMarker</span><span class="p">)</span>
+
+<span class="c1"># then you can add the layer to your mapview</span>
+<span class="n">mapview</span> <span class="o">=</span> <span class="n">MapView</span><span class="p">()</span>
+<span class="n">mapview</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mapview.clustered_marker_layer.ClusteredMarkerLayer.cluster_cls">
+<span class="sig-name descname"><span class="pre">cluster_cls</span></span><a class="headerlink" href="#mapview.clustered_marker_layer.ClusteredMarkerLayer.cluster_cls" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<p>Reference to the class widget for creating a cluster widget. Defaults to
+<a class="reference internal" href="#mapview.clustered_marker_layer.ClusterMapMarker" title="mapview.clustered_marker_layer.ClusterMapMarker"><code class="xref py py-class docutils literal notranslate"><span class="pre">ClusterMapMarker</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mapview.clustered_marker_layer.ClusteredMarkerLayer.cluster_min_zoom">
+<span class="sig-name descname"><span class="pre">cluster_min_zoom</span></span><a class="headerlink" href="#mapview.clustered_marker_layer.ClusteredMarkerLayer.cluster_min_zoom" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<p>Minimum zoom level at which clusters are generated. Defaults to 0</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mapview.clustered_marker_layer.ClusteredMarkerLayer.cluster_max_zoom">
+<span class="sig-name descname"><span class="pre">cluster_max_zoom</span></span><a class="headerlink" href="#mapview.clustered_marker_layer.ClusteredMarkerLayer.cluster_max_zoom" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<p>Maximum zoom level at which clusters are generated. Defaults to 16</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mapview.clustered_marker_layer.ClusteredMarkerLayer.cluster_radius">
+<span class="sig-name descname"><span class="pre">cluster_radius</span></span><a class="headerlink" href="#mapview.clustered_marker_layer.ClusteredMarkerLayer.cluster_radius" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<p>Cluster radius, in pixels. Defaults to 40dp</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mapview.clustered_marker_layer.ClusteredMarkerLayer.cluster_extent">
+<span class="sig-name descname"><span class="pre">cluster_extent</span></span><a class="headerlink" href="#mapview.clustered_marker_layer.ClusteredMarkerLayer.cluster_extent" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<p>Tile extent. Radius is calculated relative to this value. Defaults
+to 512.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mapview.clustered_marker_layer.ClusteredMarkerLayer.cluster_node_size">
+<span class="sig-name descname"><span class="pre">cluster_node_size</span></span><a class="headerlink" href="#mapview.clustered_marker_layer.ClusteredMarkerLayer.cluster_node_size" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<p>Size of the KD-tree leaf node. Affects performance. Defaults to 64.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mapview.clustered_marker_layer.ClusteredMarkerLayer.add_marker">
+<span class="sig-name descname"><span class="pre">add_marker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cls</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">MapMarker</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mapview.clustered_marker_layer.ClusteredMarkerLayer.add_marker" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<p>Method to add a marker to the layer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lon</strong> (<em>float</em>) – Longitude</p></li>
+<li><p><strong>lat</strong> (<em>float</em>) – Latitude</p></li>
+<li><p><strong>cls</strong> (<em>object</em>) – Widget class to use for creating this marker.
+Defaults to <code class="xref py py-class docutils literal notranslate"><span class="pre">MapMarker</span></code></p></li>
+<li><p><strong>options</strong> (<em>dict</em>) – Options to pass to the widget at instanciation.
+Defaults to an empty dict.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The instance of a Marker (internal class, not the widget)</p>
+</dd>
+</dl>
+<p>Method to call for building the cluster. It is done automatically at the
+first rendering. If you missed it, or need to rebuild after readding
+marker, just call this function.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mapview.clustered_marker_layer.ClusterMapMarker">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mapview.clustered_marker_layer.</span></span><span class="sig-name descname"><span class="pre">ClusterMapMarker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">MapMarker</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mapview.clustered_marker_layer.ClusterMapMarker" title="Permalink to this definition"></a></dt>
+<dd><p>Widget created for displaying a Cluster.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mapview.clustered_marker_layer.ClusterMapMarker.cluster">
+<span class="sig-name descname"><span class="pre">cluster</span></span><a class="headerlink" href="#mapview.clustered_marker_layer.ClusterMapMarker.cluster" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<p>Reference to the Cluster used for this widget</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mapview.clustered_marker_layer.ClusterMapMarker.num_points">
+<span class="sig-name descname"><span class="pre">num_points</span></span><a class="headerlink" href="#mapview.clustered_marker_layer.ClusterMapMarker.num_points" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<p>Number of marker that the cluster contain.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mapview.clustered_marker_layer.ClusterMapMarker.text_color">
+<span class="sig-name descname"><span class="pre">text_color</span></span><a class="headerlink" href="#mapview.clustered_marker_layer.ClusterMapMarker.text_color" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<p>Color used for the text, defaults to [.1, .1, .1, 1].
+If you want others options, best is to do your own cluster
+widget including the label you want (font, size, etc) and customizing
+the background color.</p>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="api.html" class="btn btn-neutral float-left" title="The mapview API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2019, Kivy.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
