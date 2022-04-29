@@ -339,6 +339,8 @@ class GeoJsonMapLayer(MapLayer):
 
     def _geojson_part_geometry(self, geometry, properties):
         tp = geometry["type"]
+        self.tp = tp
+
         graphics = []
         if tp == "Polygon":
             tess = Tesselator()
@@ -371,8 +373,12 @@ class GeoJsonMapLayer(MapLayer):
         zoom = view.zoom
         for lon, lat in lonlats:
             p = view.get_window_xy_from(lat, lon, zoom)
-            p = p[0] - self.parent.delta_x, p[1] - self.parent.delta_y
-            p = self.parent._scatter.to_local(*p)
+
+            # Make LineString and Polygon works at the same time
+            if self.tp == "Polygon":
+                p = p[0] - self.parent.delta_x, p[1] - self.parent.delta_y
+                p = self.parent._scatter.to_local(*p)
+
             yield p
 
     def _get_color_from(self, value):
