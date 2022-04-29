@@ -1,5 +1,11 @@
 # Change Log
 
+## [1.0.6]
+
+  - #36/#41 - Fixes paths to icons
+  - #44 - missing markers in Kivy 2.0.0
+  - #40 - Crash if MBTilesMapSource used
+  - #50 - fix geojson linestring drawing
 
 ## [1.0.5]
 
