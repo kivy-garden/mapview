@@ -16,7 +16,7 @@ __version__ = locals['__version__']
 with open(path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
-URL = 'https://github.com/kivy-garden/mapview'
+URL = 'https://github.com/Bit-Scripts/mapview'
 
 setup_params = dict(
     name='kivy_garden.mapview',
