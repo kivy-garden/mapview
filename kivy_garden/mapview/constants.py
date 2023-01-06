@@ -9,4 +9,4 @@ if platform.system() == 'Darwin':
 if platform.system() == 'Linux':
     CACHE_DIR = '/tmp/Low-Fuel/'
 if platform.system() == 'Windows':
-    CACHE_DIR = os.getenv("HOME") + '\\AppData\\Local\\Temp\\Low-Fuel\\' 
+    CACHE_DIR = os.getenv("LOCALAPPDATA") + '\\Temp\\Low-Fuel\\' 
