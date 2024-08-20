@@ -13,6 +13,7 @@ from kivy_garden.mapview.view import (
     MapMarkerPopup,
     MapView,
     MarkerMapLayer,
+    PolylineLayer
 )
 
 __all__ = [
@@ -24,4 +25,5 @@ __all__ = [
     "MapLayer",
     "MarkerMapLayer",
     "MapMarkerPopup",
+    "PolylineLayer"
 ]

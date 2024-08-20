@@ -124,3 +124,6 @@ dmypy.json
 
 # MapView cache
 /cache
+
+# Jetbrain IDE settings
+.idea
