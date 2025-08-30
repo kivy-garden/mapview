@@ -15,7 +15,6 @@ from math import ceil
 from os.path import dirname, join
 
 from kivy.clock import Clock
-from kivy.compat import string_types
 from kivy.graphics import Canvas, Color, Rectangle, SmoothLine
 from kivy.graphics.transformation import Matrix
 from kivy.lang import Builder
@@ -1016,7 +1015,8 @@ class MapView(Widget):
         self.trigger_update(True)
 
     def on_map_source(self, instance, source):
-        if isinstance(source, string_types):
+        print(type(source))
+        if isinstance(source, str):
             self.map_source = MapSource.from_provider(source)
         elif isinstance(source, (tuple, list)):
             cache_key, min_zoom, max_zoom, url, attribution, options = source
