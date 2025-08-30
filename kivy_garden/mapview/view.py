@@ -1015,7 +1015,6 @@ class MapView(Widget):
         self.trigger_update(True)
 
     def on_map_source(self, instance, source):
-        print(type(source))
         if isinstance(source, str):
             self.map_source = MapSource.from_provider(source)
         elif isinstance(source, (tuple, list)):
